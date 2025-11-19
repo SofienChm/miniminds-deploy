@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+    options.UseNpgsql(connectionString));
 
 // Add Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -112,8 +112,8 @@ using (var scope = app.Services.CreateScope())
         var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
         var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-        // Apply pending migrations
-        await context.Database.MigrateAsync();
+        // Ensure database is created and apply pending migrations
+        await context.Database.EnsureCreatedAsync();
         Console.WriteLine("Database connection established.");
 
         // Seed the database with sample data
@@ -145,8 +145,9 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHub<DaycareAPI.Hubs.NotificationHub>("/notificationHub");
 
-// Configure URL
-app.Urls.Add("http://0.0.0.0:5001");
-Console.WriteLine("Server running at: http://0.0.0.0:5001");
+// Configure URL for Render
+var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+app.Urls.Add($"http://0.0.0.0:{port}");
+Console.WriteLine($"Server running at: http://0.0.0.0:{port}");
 
 app.Run();
