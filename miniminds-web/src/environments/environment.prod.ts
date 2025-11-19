@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://YOUR-RENDER-URL.onrender.com'
+  apiUrl: 'https://miniminds-api.onrender.com/api'
 };
