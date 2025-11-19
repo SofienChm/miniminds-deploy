@@ -1,0 +1,3 @@
+ALTER TABLE Fees 
+ADD COLUMN StripePaymentIntentId VARCHAR(255) NULL,
+ADD COLUMN PaymentMethod VARCHAR(50) NULL;

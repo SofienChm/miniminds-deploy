@@ -1,0 +1,74 @@
+<div class="container mt-4">
+  <app-title-page 
+    title="Edit Educator" 
+    subtitle="Update educator profile information"
+    icon="bi bi-pencil-square"
+    [breadcrumbs]="breadcrumbs">
+  </app-title-page>
+
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div class="card" *ngIf="!loading">
+    <div class="card-header">
+      <h5>Educator Information</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="updateEducator()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">First Name *</label>
+            <input type="text" class="form-control" [(ngModel)]="educator.firstName" name="firstName" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Last Name *</label>
+            <input type="text" class="form-control" [(ngModel)]="educator.lastName" name="lastName" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Email *</label>
+            <input type="email" class="form-control" [(ngModel)]="educator.email" name="email" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Phone Number</label>
+            <input type="text" class="form-control" [(ngModel)]="educator.phone" name="phone">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Date of Birth *</label>
+            <input type="date" class="form-control" [(ngModel)]="educator.dateOfBirth" name="dateOfBirth" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Hire Date *</label>
+            <input type="date" class="form-control" [(ngModel)]="educator.hireDate" name="hireDate" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Specialization</label>
+            <input type="text" class="form-control" [(ngModel)]="educator.specialization" name="specialization" placeholder="e.g., Early Childhood, Special Needs">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Salary *</label>
+            <input type="number" class="form-control" [(ngModel)]="educator.salary" name="salary" required min="0">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Profile Picture</label>
+            <input type="file" class="form-control" (change)="onImageSelect($event)" accept="image/*">
+            <img *ngIf="imagePreview" loading="lazy" [src]="imagePreview" class="mt-2 rounded" width="100" height="100" alt="Preview">
+          </div>
+          <div class="col-12 mb-3">
+            <label class="form-label">Address</label>
+            <textarea class="form-control" [(ngModel)]="educator.address" name="address" rows="3" placeholder="Enter full address"></textarea>
+          </div>
+        </div>
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-success btn-add-global" [disabled]="saving">
+            <span *ngIf="saving" class="spinner-border spinner-border-sm me-2"></span>
+            {{ saving ? 'Updating...' : 'Update Educator' }}
+          </button>
+          <button type="button" class="btn btn-secondary btn-cancel-global" (click)="cancel()" [disabled]="saving">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

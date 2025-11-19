@@ -1,0 +1,8 @@
+// Component-specific styles can be added here if needed
+.header-info {
+    .name{
+        &.simple{
+            padding-bottom: 20px;
+        }
+    }
+}

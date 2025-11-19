@@ -1,0 +1,172 @@
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.badge {
+  font-size: 0.875rem;
+}
+
+img {
+  object-fit: cover;
+}
+
+.card-children-info{
+  .card-header{
+    border-bottom: 0 !important;
+  }
+  .title{
+    font-size: 14px;
+    font-weight: 500;
+    color: #202C4B;
+  }
+  .content{
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(106, 114, 135);
+  }
+  .child-image{
+    .avatar{
+      width: 2.813rem;
+      height: 2.813rem;
+      font-size: 1rem;
+      border: 1px solid #00000047;
+      border-radius: 4px;
+    }
+  }
+  .title-age{
+    p{
+      &:first-child{
+        font-size: 14px;
+        color: #202C4B !important;
+        font-weight: 500;
+      }
+    }
+    span{
+      font-size: 14px;
+      color: rgb(106, 114, 135) !important;
+      font-weight: 400;
+    }
+  }
+  .child-text{
+    h6{
+      margin-bottom: 0;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    p{
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .badge{
+      background: none;
+      color: #1ABE17;
+      padding: 0.25rem 0.45rem;
+      text-transform: capitalize;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      font-size: 10.5px;
+    }
+  }
+  .action-child{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    button.btn {
+      padding: 4px 8px;
+      line-height: 1.2;
+      font-size: 12px;
+    }
+  }
+  .allergies-medical{
+    .title{
+      font-size: 14px;
+      font-weight: 500;
+      color: #202C4B;
+    }
+    .detail{
+      font-size: 14px;
+      font-weight: 400;
+      color: rgb(106, 114, 135);
+    }
+  }
+}
+
+.card-detail_pages{
+  &.card-parent_detail{
+    box-shadow: none;
+    border: none;
+  }
+  .card-header{
+    .row_direction{
+      display: flex;
+      flex-direction: column;
+      .avatar{
+        width: 7rem;
+        height: 7rem;
+        border: none !important;
+        position: relative;
+        img{
+          border-radius: 10px;
+        }
+      }
+      .badge{
+        position: absolute;
+        bottom: 10px;
+        right: -38px;
+        background: green;
+        border-radius: 10px;
+        font-size: 12.5px;
+        padding: 0.35rem 0.65rem;
+        &.badge-active{
+          background: #1ABE17;
+          color: #fff;
+        }
+        &.badge-inactive{
+          background: #dc3545;
+          color: #fff;
+        }
+      }
+      .overflow-hidden{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+  .title-body{
+    font-size: 16px;
+    font-weight: 600;
+    color: #202C4B;
+  }
+  .table{
+    dt{
+      font-size: 14px;
+      font-weight: 500;
+      color: #202C4B;
+    }
+    dd{
+      font-size: 14px;
+      font-weight: 400;
+      color: rgb(106, 114, 135);
+    }
+  }
+}
+
+::ng-deep {
+  .header-info_card{
+    margin-top: -70px !important;
+  }
+}
+.logout{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    font-weight: 500 !important;
+    i{
+      font-size: 18px;
+    }
+}

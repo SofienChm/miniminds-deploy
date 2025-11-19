@@ -1,0 +1,1 @@
+UPDATE Children SET IsActive = 1 WHERE IsActive = 0;

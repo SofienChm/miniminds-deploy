@@ -1,0 +1,19 @@
+.white-box {
+  padding: 20px;
+}
+
+.logo-default {
+  margin: 10px 0;
+}
+
+@media print {
+  .btn {
+    display: none;
+  }
+}
+
+::ng-deep{
+  .header-info .name{
+    padding-bottom: 20px !important;
+  }
+}

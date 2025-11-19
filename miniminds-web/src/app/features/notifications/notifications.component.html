@@ -1,0 +1,53 @@
+<div class="notifications-page">
+  <div class="notifications-header">
+    <h1>Notifications</h1>
+    <button *ngIf="filteredNotifications.length > 0" class="mark-all-btn" (click)="markAllAsRead()">
+      <i class="bi bi-check-all"></i> Mark all as read
+    </button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab" [class.active]="activeTab === 'all'" (click)="setActiveTab('all')">
+      All
+    </button>
+    <button class="tab" [class.active]="activeTab === 'unread'" (click)="setActiveTab('unread')">
+      Unread
+    </button>
+  </div>
+
+  <div class="notifications-container">
+    <div *ngIf="isLoading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading notifications...</p>
+    </div>
+
+    <div *ngIf="!isLoading && filteredNotifications.length === 0" class="empty-state">
+      <i class="bi bi-bell-slash"></i>
+      <h3>No notifications</h3>
+      <p>You're all caught up!</p>
+    </div>
+
+    <div *ngIf="!isLoading && filteredNotifications.length > 0" class="notifications-list">
+      <div *ngFor="let notification of filteredNotifications" 
+           class="notification-card" 
+           [class.unread]="!notification.isRead"
+           [class.clickable]="notification.redirectUrl"
+           (click)="onNotificationClick(notification)">
+        <div class="notification-avatar" [ngClass]="getNotificationIconClass(notification.type)">
+          <i [class]="getNotificationIcon(notification.type)"></i>
+        </div>
+        <div class="notification-body">
+          <div class="notification-header-row">
+            <h3 class="notification-title">{{ notification.title }}</h3>
+            <span class="notification-time">{{ getTimeAgo(notification.createdAt) }}</span>
+          </div>
+          <p class="notification-message">{{ notification.message }}</p>
+          <div *ngIf="notification.redirectUrl" class="notification-action">
+            <i class="bi bi-arrow-right-circle"></i> View details
+          </div>
+        </div>
+        <div *ngIf="!notification.isRead" class="unread-indicator"></div>
+      </div>
+    </div>
+  </div>
+</div>

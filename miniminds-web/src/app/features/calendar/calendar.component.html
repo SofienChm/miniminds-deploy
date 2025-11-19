@@ -1,0 +1,149 @@
+<div *ngIf="isParent && !loading" [class]="isParent ? '' : ' mt-4'">
+    <div class="parent-detailchild font-inter">
+      <app-parent-child-header-simple *ngIf="isParent"
+        title="Calendar"
+      >
+      </app-parent-child-header-simple>
+
+      <div class="body container-fluid">
+        <div class="main-information">
+          <full-calendar [options]="calendarOptions"></full-calendar>
+          <div class="main-information">
+            <h5 class="title-body">
+              Upcoming Events
+            </h5>
+            <div class="profile-info-grid" *ngIf="getUpcomingEvents().length > 0">
+              <div class="profile-info-card" *ngFor="let event of getUpcomingEvents()">
+                <div >
+                  <div class="info-title">{{ event.name }}</div>
+                  <div class="info-desc"> {{ event.time | date:'MMM d, y' }} at {{ event.time | date:'shortTime' }} </div>
+                  <div class="info-desc"> {{ event.type }} </div>
+                </div>
+              </div>
+            </div>
+            <div class="card card-general" *ngIf="getUpcomingEvents().length == 0">
+              <div class="text-center">
+            
+                <div class="card-body text-center text-muted py-4">
+                  <i class="bi bi-calendar-x icon-3x mb-3 opacity-25"></i>
+                  <p class="mb-0">No upcoming events</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div *ngIf="!isParent"  [class]="isParent ? '' : 'container-fluid mt-4'">
+  <app-title-page 
+  [title]="'Calendar'" 
+  [breadcrumbs]="[{label: 'Dashboard', url: '/dashboard'}, {label: 'Calendar'}]">
+  </app-title-page>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <full-calendar [options]="calendarOptions"></full-calendar>
+
+          <app-calendar 
+            [selectedDate]="selectedDate"
+            [events]="events"
+            [holidays]="holidays"
+            (dateSelected)="onDateSelected($event)">
+          </app-calendar>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4">
+      <div class="card card-general">
+        <div class="card-header">
+          <h5 class="mb-0">Selected Date</h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-1 selected-event_day"><strong>Date:</strong> {{ selectedDate | date:'fullDate' }}</p>
+          <div *ngIf="getEventsForDate(selectedDate).length > 0; else noEvents">
+            <div *ngFor="let event of getEventsForDate(selectedDate)" class="mb-2 p-2 bg-light rounded">
+              <strong class="selected-event_day">{{ event.name }}</strong><br>
+              <small class="selected-event_time">{{ event.type }} - {{ event.time | date:'shortTime' }}</small>
+            </div>
+          </div>
+          <ng-template #noEvents>
+            <p class="mb-0 selected-event_time">No events scheduled for this date.</p>
+          </ng-template>
+        </div>
+      </div>
+
+      <div class="card card-general mt-3 card-upcoming_calendar">
+        <div class="card-header">
+          <h5 class="mb-0">Upcoming Events</h5>
+        </div>
+        <div class="card-body">
+          <div *ngIf="getUpcomingEvents().length > 0; else noUpcoming">
+            <div *ngFor="let event of getUpcomingEvents()" class="mb-3 p-2 border-start border-primary border-3 bg-light">
+              <strong class="d-block name">{{ event.name }}</strong>
+              <small class="text-muted d-block time">{{ event.time | date:'MMM d, y' }} at {{ event.time | date:'shortTime' }}</small>
+              <small class="text-muted type">{{ event.type }}</small>
+            </div>
+          </div>
+          <ng-template #noUpcoming>
+            <p class="mb-0 text-muted">No upcoming events.</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- Event Details Modal -->
+<div class="modal fade" [class.show]="selectedEvent" [style.display]="selectedEvent ? 'block' : 'none'" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" *ngIf="selectedEvent">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedEvent.name }}</h5>
+        <button type="button" class="btn-close" (click)="closeEventModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Type:</strong> {{ selectedEvent.type }}</p>
+        <p><strong>Date:</strong> {{ selectedEvent.time | date:'fullDate' }}</p>
+        <p><strong>Time:</strong> {{ selectedEvent.time | date:'shortTime' }}</p>
+        <p *ngIf="selectedEvent.description"><strong>Description:</strong> {{ selectedEvent.description }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeEventModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade" [class.show]="selectedEvent" *ngIf="selectedEvent" (click)="closeEventModal()"></div>
+
+<!-- Date Events Modal -->
+<div class="modal fade" [class.show]="showDateEventsModal" [style.display]="showDateEventsModal ? 'block' : 'none'" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Events on {{ selectedDate | date:'fullDate' }}</h5>
+        <button type="button" class="btn-close" (click)="closeDateEventsModal()"></button>
+      </div>
+      <div class="modal-body">
+        <div *ngFor="let holiday of selectedDateHolidays" class="mb-3 p-3 border rounded bg-danger bg-opacity-10">
+          <h6 class="mb-2 text-danger">🎉 {{ holiday.name }}</h6>
+          <p class="mb-0"><strong>Holiday</strong></p>
+        </div>
+        <div *ngFor="let event of selectedDateEvents" class="mb-3 p-3 border rounded" (click)="selectedEvent = event; showDateEventsModal = false" style="cursor: pointer;">
+          <h6 class="mb-2">{{ event.name }}</h6>
+          <p class="mb-1"><strong>Type:</strong> {{ event.type }}</p>
+          <p class="mb-0"><strong>Time:</strong> {{ event.time | date:'shortTime' }}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeDateEventsModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade" [class.show]="showDateEventsModal" *ngIf="showDateEventsModal" (click)="closeDateEventsModal()"></div>

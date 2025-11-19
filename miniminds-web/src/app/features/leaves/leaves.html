@@ -1,0 +1,276 @@
+<div class="container-fluid mt-4">
+  <app-title-page 
+    [title]="'Leave Management'" 
+    [subtitle]="'Manage leave requests and balances'"
+    [icon]="'bi bi-calendar-event-times'"
+    [breadcrumbs]="breadcrumbs" 
+    [actions]="titleActions">
+  </app-title-page>
+
+  <!-- Teacher View -->
+  <div *ngIf="isTeacher">
+    <!-- Leave Balance Cards -->
+    <div class="row mb-4">
+      <!-- Annual Leave -->
+      <div class="col-md-4">
+        <div class="card global-card card-leaves bg-black-le">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="text-start">
+                <p class="mb-1 text-muted">Annual Leaves</p>
+                <h4 class="mb-0">{{ balance?.annualUsedDays || 0 }}</h4>
+              </div>
+              <div class="d-flex">
+                <div class="flex-shrink-0 me-2">
+                  <span class="avatar avatar-md d-flex align-items-center justify-content-center rounded">
+                    <i class="bi bi-calendar-event-check fs-4 text-white"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <span class="badge bg-secondary-transparent mt-2">Remaining Leaves: {{ balance?.annualRemainingDays || 0 }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medical Leave -->
+      <div class="col-md-4">
+        <div class="card global-card card-leaves bg-blue-le">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="text-start">
+                <p class="mb-1 text-muted">Medical Leaves</p>
+                <h4 class="mb-0">{{ balance?.medicalUsedDays || 0 }}</h4>
+              </div>
+              <div class="d-flex">
+                <div class="flex-shrink-0 me-2">
+                  <span class="avatar avatar-md d-flex align-items-center justify-content-center  rounded">
+                    <i class="bi bi-prescription2 fs-4 text-white"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <span class="badge bg-info-transparent mt-2">Remaining Leaves: {{ balance?.medicalRemainingDays || 0 }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total Allocation -->
+      <div class="col-md-4">
+        <div class="card global-card card-leaves bg-pink-le">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="text-start">
+                <p class="mb-1 text-muted">Total Allocation</p>
+                <h4 class="mb-0">{{ (balance?.annualAllocation || 0) + (balance?.medicalAllocation || 0) }}</h4>
+              </div>
+              <div class="d-flex">
+                <div class="flex-shrink-0 me-2">
+                  <span class="avatar avatar-md d-flex align-items-center justify-content-center rounded">
+                    <i class="bi bi-calendar-event-alt fs-4 text-white"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <span class="badge bg-pink-transparent mt-2">Total Remaining: {{ (balance?.annualRemainingDays || 0) + (balance?.medicalRemainingDays || 0) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your Requests -->
+    <div class="card global-card mb-4">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-list-ul me-2"></i>Your Leave Requests</h5>
+      </div>
+      <div class="card-body">
+        <div *ngIf="myLeaves && myLeaves.length > 0; else noRequests" class="table-responsive">
+          <table class="table table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Type</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Days</th>
+                <th>Status</th>
+                <th>Reason</th>
+                <th>Requested On</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let l of myLeaves">
+                <td>
+                  <span class="badge" [class.badge-annual]="l.leaveType === 'Annual'" [class.badge-medical]="l.leaveType === 'Medical'" [class.badge-Emergency]="l.leaveType === 'Emergency'">
+                    <i class="bi" [class.bi-calendar]="l.leaveType === 'Annual'"  [class.bi-heart-pulse]="l.leaveType === 'Medical'" [class.bi-exclamation-triangle]="l.leaveType === 'Emergency'"></i>
+                    {{ l.leaveType }}
+                  </span>
+                </td>
+                <td>{{ l.startDate | date:'mediumDate' }}</td>
+                <td>{{ l.endDate | date:'mediumDate' }}</td>
+                <td><span class="badge bg-main">{{ l.days }} days</span></td>
+                <td>
+                  <span class="badge" 
+                    [class.badge-pending]="l.status === 'Pending'"
+                    [class.badge-approved]="l.status === 'Approved'"
+                    [class.badge-rejected]="l.status === 'Rejected'">
+                    {{ l.status }}
+                  </span>
+                </td>
+                <td>{{ l.reason || 'N/A' }}</td>
+                <td>{{ l.requestedAt | date:'short' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #noRequests>
+          <div class="text-center py-5">
+            <i class="bi bi-inbox icon-3x text-muted mb-3"></i>
+            <p class="text-muted">No leave requests yet.</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <!-- Request Leave Form -->
+    <div class="card global-card mb-4">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-send-fill me-2"></i>Request New Leave</h5>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="submitLeave()" class="leave-form">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label class="form-label">Leave Type <span class="text-danger">*</span></label>
+              <select class="form-select" [(ngModel)]="newLeave.leaveType" name="leaveType" required>
+                <option value="Annual">Annual Leave</option>
+                <option value="Medical">Medical Leave</option>
+                <option value="Emergency">Emergency Leave</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label">Start Date <span class="text-danger">*</span></label>
+              <input type="date" class="form-control" [(ngModel)]="newLeave.startDate" name="startDate" required />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label">End Date <span class="text-danger">*</span></label>
+              <input type="date" class="form-control" [(ngModel)]="newLeave.endDate" name="endDate" required />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mb-3">
+              <label class="form-label">Reason (Optional)</label>
+              <textarea class="form-control" [(ngModel)]="newLeave.reason" name="reason" rows="3" placeholder="Enter reason for leave request..."></textarea>
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="text-danger" *ngIf="errorMessage"><i class="bi bi-exclamation-circle-fill me-1"></i>{{ errorMessage }}</span>
+            <button type="submit" class="btn btn-primary ms-auto" [disabled]="submitting">
+              <i class="bi bi-send-fill me-2"></i>{{ submitting ? 'Submitting...' : 'Submit Request' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin View -->
+  <div *ngIf="isAdmin">
+    <!-- Filter Section -->
+    <div class="bg-white p-3 border rounded-1 d-flex align-items-center justify-content-between flex-wrap mb-4">
+      <h4 class="title-filter mb-0">Leave Requests</h4>
+      <div class="d-flex align-items-center">
+        <label class="me-2 mb-0 text-muted">Filter by Status:</label>
+        <select class="form-select filter-date-general" [(ngModel)]="selectedStatus" (change)="loadAdminLeaves()" style="width: auto;">
+          <option *ngFor="let s of allStatus" [value]="s">{{ s }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Requests Table -->
+    <div class="card global-card card-leaves">
+      <div class="card-body">
+        <div *ngIf="pendingLeaves && pendingLeaves.length > 0; else noPending" class="table-responsive">
+          <table class="table table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Teacher</th>
+                <th>Type</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Days</th>
+                <th>Status</th>
+                <th>Reason</th>
+                <th>Requested On</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let l of displayedLeaves">
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avatar avatar-sm me-2">
+                      <img loading="lazy" [src]="l.teacher?.profilePicture || 'assets/default-avatar.svg'" class="avatar-img rounded-circle img-leaves" alt="Teacher">
+                    </div>
+                    <span>{{ l.teacher ? (l.teacher.firstName + ' ' + l.teacher.lastName) : ('#' + l.teacherId) }}</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge" [class.badge-annual]="l.leaveType === 'Annual'" [class.badge-medical]="l.leaveType === 'Medical'" [class.badge-Emergency]="l.leaveType === 'Emergency'">
+                    <i class="bi" [class.bi-calendar]="l.leaveType === 'Annual'" [class.bi-heart-pulse]="l.leaveType === 'Medical'" [class.bi-exclamation-triangle]="l.leaveType === 'Emergency'"></i>
+                    {{ l.leaveType }}
+                  </span>
+                </td>
+                <td>{{ l.startDate | date:'mediumDate' }}</td>
+                <td>{{ l.endDate | date:'mediumDate' }}</td>
+                <td><span class="badge bg-main">{{ l.days }} days</span></td>
+                <td>
+                  <span class="badge" 
+                    [class.badge-pending]="l.status === 'Pending'"
+                    [class.badge-approved]="l.status === 'Approved'"
+                    [class.badge-rejected]="l.status === 'Rejected'">
+                    {{ l.status }}
+                  </span>
+                </td>
+                <td>{{ l.reason || 'N/A' }}</td>
+                <td>{{ l.requestedAt | date:'short' }}</td>
+                <td>
+                  <div class="d-flex gap-1">
+                    <button class="btn btn-sm" 
+                            [class.btn-success]="l.status !== 'Approved'"
+                            [class.btn-outline-success]="l.status === 'Approved'"
+                            (click)="approve(l)" 
+                            [disabled]="l.status === 'Approved'"
+                            [title]="l.status === 'Approved' ? 'Already Approved' : 'Approve'">
+                      <i class="bi bi-check"></i>
+                    </button>
+                    <button class="btn btn-sm" 
+                            [class.btn-danger]="l.status !== 'Rejected'"
+                            [class.btn-outline-danger]="l.status === 'Rejected'"
+                            (click)="reject(l)" 
+                            [disabled]="l.status === 'Rejected'"
+                            [title]="l.status === 'Rejected' ? 'Already Rejected' : 'Reject'">
+                      <i class="bi bi-x-lg"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #noPending>
+          <div class="text-center py-5">
+            <i class="bi bi-inbox icon-3x text-muted mb-3"></i>
+            <p class="text-muted">No requests found for this status.</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    
+    <!-- Load More Button -->
+    <div *ngIf="hasMoreLeaves()" class="text-center mt-3">
+      <button class="btn btn-outline-primary" (click)="loadMoreLeaves()">
+        Load More Leaves
+      </button>
+    </div>
+  </div>
+</div>

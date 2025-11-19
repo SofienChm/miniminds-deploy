@@ -1,0 +1,366 @@
+<div *ngIf="isParent" class="parent-detailchild font-inter">
+  <app-parent-child-header-simple *ngIf="isParent"
+    title="Fee Management"
+  >
+  </app-parent-child-header-simple>
+</div>
+<div class="container-fluid mt-4">
+  <app-title-page *ngIf="!isParent"
+    title="Fee Management" 
+    subtitle="Manage monthly fees and payments intelligently"
+    icon="bi bi-currency-dollar"
+    [breadcrumbs]="breadcrumbs"
+    [actions]="titleActions">
+  </app-title-page>
+
+  <!-- Summary Cards -->
+  <div class="row mb-4" *ngIf="summary">
+    <div class="col-xl-3 col-md-6 mb-3">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <div class="bg-primary bg-opacity-10 rounded-3 p-3">
+                <i class="bi bi-currency-dollar text-primary fs-4"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h6 class="mb-0">Total Fees</h6>
+              <h4 class="mb-0">${{ summary.totalAmount | number:'1.2-2' }}</h4>
+              <small class="text-muted">{{ summary.totalFees }} fees</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-3">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <div class="bg-success bg-opacity-10 rounded-3 p-3">
+                <i class="bi bi-check-circle text-success fs-4"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h6 class="mb-0">Paid</h6>
+              <h4 class="mb-0">${{ summary.paidAmount | number:'1.2-2' }}</h4>
+              <small class="text-muted">{{ summary.paidFees }} fees</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-3">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <div class="bg-warning bg-opacity-10 rounded-3 p-3">
+                <i class="bi bi-clock text-warning fs-4"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h6 class="mb-0">Pending</h6>
+              <h4 class="mb-0">${{ summary.pendingAmount | number:'1.2-2' }}</h4>
+              <small class="text-muted">{{ summary.pendingFees }} fees</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-3">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <div class="bg-danger bg-opacity-10 rounded-3 p-3">
+                <i class="bi bi-exclamation-triangle text-danger fs-4"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h6 class="mb-0">Overdue</h6>
+              <h4 class="mb-0">${{ summary.overdueAmount | number:'1.2-2' }}</h4>
+              <small class="text-muted">{{ summary.overdueFees }} fees</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <label class="form-label">Search</label>
+          <input type="text" class="form-control" placeholder="Search by child, parent, or description" [(ngModel)]="searchTerm">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Status</label>
+          <select class="form-select" [(ngModel)]="filterStatus">
+            <option value="all">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="paid">Paid</option>
+            <option value="overdue">Overdue</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Child</label>
+          <select class="form-select" [(ngModel)]="filterChild">
+            <option value="all">All Children</option>
+            <option *ngFor="let child of children" [value]="child.id">{{ child.firstName }} {{ child.lastName }}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Export</label>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" (click)="toggleExportDropdown()">
+              <i class="bi bi-download me-2"></i>Export
+            </button>
+            <ul class="dropdown-menu" [class.show]="showExportDropdown">
+              <li><button class="dropdown-item" (click)="exportAsPDF()"><i class="bi bi-file-earmark-pdf me-2"></i>PDF</button></li>
+              <li><button class="dropdown-item" (click)="exportAsExcel()"><i class="bi bi-file-earmark-excel me-2"></i>Excel</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Fees Table -->
+  <div class="card" *ngIf="!loading">
+    <div class="card-body">
+      <div *ngIf="filteredFees.length === 0" class="text-center p-4">
+        <i class="bi bi-currency-dollar fs-1 text-muted"></i>
+        <h4 class="mt-3">No Fees Found</h4>
+        <p class="text-muted">{{ fees.length === 0 ? 'Start by adding a new fee or creating monthly fees for all children.' : 'Try adjusting your filters.' }}</p>
+      </div>
+
+      <div *ngIf="filteredFees.length > 0" class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Child</th>
+              <th>Parent</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fee of filteredFees">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="flex-grow-1">
+                    <div class="fw-medium">{{ fee.childName }}</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <div class="fw-medium">{{ fee.parentName }}</div>
+                  <small class="text-muted">{{ fee.parentEmail }}</small>
+                </div>
+              </td>
+              <td>
+                <div>{{ fee.description }}</div>
+                <small class="text-muted" *ngIf="fee.notes">{{ fee.notes }}</small>
+              </td>
+              <td>
+                <span class="fw-bold">${{ fee.amount | number:'1.2-2' }}</span>
+              </td>
+              <td>
+                <div>{{ fee.dueDate | date:'mediumDate' }}</div>
+                <small class="text-danger" *ngIf="fee.daysOverdue && fee.daysOverdue > 0">
+                  {{ fee.daysOverdue }} days overdue
+                </small>
+              </td>
+              <td>
+                <span [class]="getStatusClass(fee.status)">{{ fee.status | titlecase }}</span>
+                <div *ngIf="fee.paidDate" class="small text-muted mt-1">
+                  Paid: {{ fee.paidDate | date:'shortDate' }}
+                </div>
+              </td>
+              <td>
+                <span [class]="getFeeTypeClass(fee.feeType)">{{ fee.feeType | titlecase }}</span>
+              </td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Actions
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button class="dropdown-item" (click)="navigateToDetail(fee.id!)">
+                        <i class="bi bi-eye me-2"></i>View Detail
+                      </button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item" (click)="navigateToEdit(fee.id!)">
+                        <i class="bi bi-pencil me-2"></i>Edit
+                      </button>
+                    </li>
+                    <li *ngIf="fee.status !== 'paid'">
+                      <button class="dropdown-item" (click)="openPaymentModal(fee)">
+                        <i class="bi bi-credit-card me-2"></i>Mark as Paid
+                      </button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item text-danger" (click)="deleteFee(fee)">
+                        <i class="bi bi-trash me-2"></i>Delete
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- Load More Button -->
+    <div *ngIf="hasMoreFees()" class="text-center mt-3">
+      <button class="btn btn-outline-primary" (click)="loadMoreFees()">
+        Load More Fees
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Fee Modal -->
+<div class="modal fade" [class.show]="showAddFeeModal" [style.display]="showAddFeeModal ? 'block' : 'none'" *ngIf="showAddFeeModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add New Fee</h5>
+        <button type="button" class="btn-close" (click)="showAddFeeModal = false"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Child *</label>
+            <select class="form-select" [(ngModel)]="newFee.childId" name="childId" required>
+              <option value="0">Select a child</option>
+              <option *ngFor="let child of children" [value]="child.id">{{ child.firstName }} {{ child.lastName }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Amount *</label>
+            <input type="number" class="form-control" [(ngModel)]="newFee.amount" name="amount" step="0.01" min="0" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description *</label>
+            <input type="text" class="form-control" [(ngModel)]="newFee.description" name="description" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Due Date *</label>
+            <input type="date" class="form-control" [(ngModel)]="newFee.dueDate" name="dueDate" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Fee Type</label>
+            <select class="form-select" [(ngModel)]="newFee.feeType" name="feeType">
+              <option value="monthly">Monthly</option>
+              <option value="one-time">One-time</option>
+              <option value="late-fee">Late Fee</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Notes</label>
+            <textarea class="form-control" [(ngModel)]="newFee.notes" name="notes" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="showAddFeeModal = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="createFee()">Add Fee</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bulk Monthly Fee Modal -->
+<div class="modal fade" [class.show]="showBulkFeeModal" [style.display]="showBulkFeeModal ? 'block' : 'none'" *ngIf="showBulkFeeModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Monthly Fees for All Children</h5>
+        <button type="button" class="btn-close" (click)="showBulkFeeModal = false"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-info">
+          <i class="bi bi-info-circle me-2"></i>
+          This will create a monthly fee for all {{ children.length }} children.
+        </div>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Amount per Child *</label>
+            <input type="number" class="form-control" [(ngModel)]="bulkFee.amount" name="amount" step="0.01" min="0" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description *</label>
+            <input type="text" class="form-control" [(ngModel)]="bulkFee.description" name="description" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Due Date *</label>
+            <input type="date" class="form-control" [(ngModel)]="bulkFee.dueDate" name="dueDate" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="showBulkFeeModal = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="createBulkFees()">Create Fees</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Payment Modal -->
+<div class="modal fade" [class.show]="showPaymentModal" [style.display]="showPaymentModal ? 'block' : 'none'" *ngIf="showPaymentModal && selectedFee">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Mark Fee as Paid</h5>
+        <button type="button" class="btn-close" (click)="showPaymentModal = false"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <strong>Child:</strong> {{ selectedFee.childName }}<br>
+          <strong>Parent:</strong> {{ selectedFee.parentName }}<br>
+          <strong>Amount:</strong> ${{ selectedFee.amount | number:'1.2-2' }}<br>
+          <strong>Description:</strong> {{ selectedFee.description }}
+        </div>
+        <hr>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Payment Date</label>
+            <input type="date" class="form-control" [(ngModel)]="paymentData.paidDate" name="paidDate">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Payment Notes</label>
+            <textarea class="form-control" [(ngModel)]="paymentData.paymentNotes" name="paymentNotes" rows="3" placeholder="Optional payment notes..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-cancel-global" (click)="showPaymentModal = false">Cancel</button>
+        <button type="button" class="btn btn-success btn-add-global" (click)="payFee()">Mark as Paid</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Backdrop -->
+<div class="modal-backdrop fade show" *ngIf="showAddFeeModal || showBulkFeeModal || showPaymentModal"></div>

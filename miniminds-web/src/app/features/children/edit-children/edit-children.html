@@ -1,0 +1,172 @@
+<div *ngIf="isParent()" [class]="isParent() ? '' : ' mt-4'">
+    <div *ngIf="child && !loading" class="parent-detailchild font-inter">
+      <div class="header-info">
+        <div class="title-icons mb-3">
+          <div class="page-back" (click)="back()">
+            <i class="bi bi-arrow-left"></i>
+          </div>
+          <div class="title-page">
+            Edit Child
+          </div>
+          <div class="page-setting">
+          </div>
+        </div>
+        <div class="d-flex image-name row_direction">                                                
+            <div class="d-flex image-active">
+              <img  loading="lazy"  
+                  [src]="child.profilePicture || 'assets/default-avatar.svg'" 
+                class="img-fluid" alt="child Photo">
+            </div>                                              
+            <div class="overflow-hidden">
+              <h5 class="name">{{ child.firstName }} {{ child.lastName }}</h5>
+            </div>
+          </div>
+      </div>
+      <div class="body container-fluid">
+        <div class="card card-general">
+          <div class="card-header">
+            <h5>Child Information</h5>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="updateChild()">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">First Name *</label>
+                  <input type="text" class="form-control" [(ngModel)]="child.firstName" name="firstName" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Last Name *</label>
+                  <input type="text" class="form-control" [(ngModel)]="child.lastName" name="lastName" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Date of Birth *</label>
+                  <input type="date" class="form-control" [(ngModel)]="child.dateOfBirth" name="dateOfBirth" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Gender *</label>
+                  <select class="form-select" [(ngModel)]="child.gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option *ngFor="let gender of genders" [value]="gender.value">
+                      {{ gender.label }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Profile Picture</label>
+                  <input type="file" class="form-control" (change)="onImageSelect($event)" accept="image/*">
+                  <img *ngIf="imagePreview" loading="lazy" [src]="imagePreview" class="mt-2 rounded" width="100" height="100" alt="Preview">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="child.isActive" name="isActive" id="isActiveEdit">
+                    <label class="form-check-label" for="isActiveEdit">
+                      Active Status
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 mb-3">
+                  <label class="form-label">Allergies</label>
+                  <textarea class="form-control" [(ngModel)]="child.allergies" name="allergies" rows="3" placeholder="List any known allergies"></textarea>
+                </div>
+                <div class="col-12 mb-3">
+                  <label class="form-label">Medical Notes</label>
+                  <textarea class="form-control" [(ngModel)]="child.medicalNotes" name="medicalNotes" rows="3" placeholder="Any important medical information"></textarea>
+                </div>
+              </div>
+              <div class="d-flex gap-2 flex-row-reverse">
+                <button type="submit" class="btn btn-add-global" [disabled]="saving">
+                  <span *ngIf="saving" class="spinner-border spinner-border-sm me-2"></span>
+                  {{ saving ? 'Updating...' : 'Update Child' }}
+                </button>
+                <button type="button" class="btn btn-cancel-global" (click)="cancel()" [disabled]="saving">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="container mt-4" *ngIf="!isParent()">
+  <app-title-page 
+    title="Edit Child" 
+    subtitle="Update child information"
+    icon="bi bi-pencil-square"
+    [breadcrumbs]="breadcrumbs">
+  </app-title-page>
+
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div class="card card-general" *ngIf="!loading">
+    <div class="card-header">
+      <h5>Child Information</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="updateChild()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">First Name *</label>
+            <input type="text" class="form-control" [(ngModel)]="child.firstName" name="firstName" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Last Name *</label>
+            <input type="text" class="form-control" [(ngModel)]="child.lastName" name="lastName" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Date of Birth *</label>
+            <input type="date" class="form-control" [(ngModel)]="child.dateOfBirth" name="dateOfBirth" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Gender *</label>
+            <select class="form-select" [(ngModel)]="child.gender" name="gender" required>
+              <option value="">Select Gender</option>
+              <option *ngFor="let gender of genders" [value]="gender.value">
+                {{ gender.label }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3" *ngIf="!isParent()">
+            <label class="form-label">Parent *</label>
+            <select class="form-select" [(ngModel)]="child.parentId" name="parentId" required>
+              <option value="0">Select Parent</option>
+              <option *ngFor="let parent of parents" [value]="parent.id">
+                {{ parent.firstName }} {{ parent.lastName }} - {{ parent.email }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Profile Picture</label>
+            <input type="file" class="form-control" (change)="onImageSelect($event)" accept="image/*">
+            <img *ngIf="imagePreview" loading="lazy"  [src]="imagePreview" class="mt-2 rounded" width="100" height="100" alt="Preview">
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="child.isActive" name="isActive" id="isActiveEdit">
+              <label class="form-check-label" for="isActiveEdit">
+                Active Status
+              </label>
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <label class="form-label">Allergies</label>
+            <textarea class="form-control" [(ngModel)]="child.allergies" name="allergies" rows="3" placeholder="List any known allergies"></textarea>
+          </div>
+          <div class="col-12 mb-3">
+            <label class="form-label">Medical Notes</label>
+            <textarea class="form-control" [(ngModel)]="child.medicalNotes" name="medicalNotes" rows="3" placeholder="Any important medical information"></textarea>
+          </div>
+        </div>
+        <div class="d-flex gap-2 flex-row-reverse">
+          <button type="submit" class="btn btn-add-global" [disabled]="saving">
+            <span *ngIf="saving" class="spinner-border spinner-border-sm me-2"></span>
+            {{ saving ? 'Updating...' : 'Update Child' }}
+          </button>
+          <button type="button" class="btn btn-cancel-global" (click)="cancel()" [disabled]="saving">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

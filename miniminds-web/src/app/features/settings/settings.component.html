@@ -1,0 +1,117 @@
+<div class="container-fluid mt-4">
+  <app-title-page 
+    [title]="'SETTINGS.TITLE' | translate" 
+    [subtitle]="'SETTINGS.SUBTITLE' | translate"
+    icon="bi bi-gear"
+    [breadcrumbs]="breadcrumbs">
+  </app-title-page>
+
+  <div class="row">
+    <div class="col-12 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 py-3">
+          <h5 class="mb-0">{{ 'SETTINGS.BASIC_INFO' | translate }}</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-bold">{{ 'SETTINGS.LANGUAGE' | translate }}</label>
+              <p class="text-muted small mb-2">{{ 'SETTINGS.LANGUAGE_DESC' | translate }}</p>
+              <select class="form-select mb-2" [value]="currentLang" (change)="switchLanguage($any($event.target).value)">
+                <option *ngFor="let lang of languages" [value]="lang.code">
+                  {{ lang.flag }} {{ lang.name }}
+                </option>
+              </select>
+              <button class="btn btn-primary btn-sm w-100" (click)="saveLanguage()">
+                <i class="bi bi-floppy me-2"></i>{{ 'SETTINGS.SAVE' | translate }}
+              </button>
+            </div>
+
+            <div *ngIf="isAdmin" class="col-md-4 mb-3">
+              <label class="form-label fw-bold">{{ 'SETTINGS.CURRENCY' | translate }}</label>
+              <p class="text-muted small mb-2">{{ 'SETTINGS.CURRENCY_DESC' | translate }}</p>
+              <select class="form-select" [(ngModel)]="selectedCurrency" (change)="onCurrencyChange()">
+                <option *ngFor="let currency of currencies" [value]="currency.code">
+                  {{ currency.symbol }} - {{ currency.name }} ({{ currency.code }})
+                </option>
+              </select>
+            </div>
+
+            <div *ngIf="isAdmin" class="col-md-4 mb-3">
+              <label class="form-label fw-bold">{{ 'SETTINGS.COUNTRY' | translate }}</label>
+              <p class="text-muted small mb-2">{{ 'SETTINGS.COUNTRY_DESC' | translate }}</p>
+              <select class="form-select" [(ngModel)]="selectedCountry" (change)="onCountryChange()">
+                <option *ngFor="let country of countries" [value]="country.code">
+                  {{ country.flag }} {{ country.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isAdmin" class="col-12 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 py-3">
+          <h5 class="mb-0"><i class="bi bi-sliders me-2"></i>Leave Settings</h5>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-4">Configure default leave days for new teachers</p>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold">Default Annual Leave Days</label>
+              <input type="number" class="form-control" [(ngModel)]="defaultAnnualLeaveDays" min="0" max="365">
+              <small class="text-muted">Default: 30 days per year</small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold">Default Medical Leave Days</label>
+              <input type="number" class="form-control" [(ngModel)]="defaultMedicalLeaveDays" min="0" max="365">
+              <small class="text-muted">Default: 10 days per year</small>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-white border-0 py-3">
+          <button class="btn btn-primary" (click)="saveLeaveSettings()">
+            <i class="bi bi-floppy me-2"></i>Save Leave Settings
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isAdmin" class="col-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 py-3">
+          <h5 class="mb-0">{{ 'SETTINGS.PREFIXES' | translate }}</h5>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-4">{{ 'SETTINGS.PREFIXES_DESC' | translate }}</p>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-bold">{{ 'SETTINGS.CHILD_PREFIX' | translate }}</label>
+              <input type="text" class="form-control" [(ngModel)]="childPrefix" (change)="onPrefixChange('child')" maxlength="20" placeholder="Child, Student, Player">
+              <small class="text-muted">e.g., Child, Student, Player</small>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-bold">{{ 'SETTINGS.PARENT_PREFIX' | translate }}</label>
+              <input type="text" class="form-control" [(ngModel)]="parentPrefix" (change)="onPrefixChange('parent')" maxlength="20" placeholder="Parent, Guardian">
+              <small class="text-muted">e.g., Parent, Guardian</small>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-bold">{{ 'SETTINGS.EDUCATOR_PREFIX' | translate }}</label>
+              <input type="text" class="form-control" [(ngModel)]="educatorPrefix" (change)="onPrefixChange('educator')" maxlength="20" placeholder="Educator, Teacher, Coach">
+              <small class="text-muted">e.g., Educator, Teacher, Coach</small>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-white border-0 py-3">
+          <button class="btn btn-primary" (click)="saveSettings()">
+            <i class="bi bi-floppy me-2"></i>{{ 'SETTINGS.SAVE' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

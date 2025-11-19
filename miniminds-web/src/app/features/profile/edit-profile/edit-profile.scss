@@ -1,0 +1,18 @@
+.list-group-item{
+    cursor: pointer;
+    &.active {
+        background-color: #202C4B;
+        border-color: #202C4B;
+        color: white;
+    }
+}
+::ng-deep {
+    .page-setting{
+        i{
+            display: none !important;
+        }
+    }
+    .header-info{
+        margin-bottom: 35px !important;
+    }
+}

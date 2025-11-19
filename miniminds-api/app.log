@@ -1,0 +1,1621 @@
+/var/www/html/miniminds/miniminds-api/DaycareAPI.csproj : warning NU1902: Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+/var/www/html/miniminds/miniminds-api/DaycareAPI.csproj : warning NU1902: Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='DaycareDB' AND TABLE_NAME='__EFMigrationsHistory';
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='DaycareDB' AND TABLE_NAME='__EFMigrationsHistory';
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `MigrationId`, `ProductVersion`
+      FROM `__EFMigrationsHistory`
+      ORDER BY `MigrationId`;
+info: Microsoft.EntityFrameworkCore.Migrations[20405]
+      No migrations were applied. The database is already up to date.
+Database connection established.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (41ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+      FROM `AspNetRoles` AS `a`
+      WHERE `a`.`NormalizedName` = @__normalizedName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+      FROM `AspNetRoles` AS `a`
+      WHERE `a`.`NormalizedName` = @__normalizedName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+      FROM `AspNetRoles` AS `a`
+      WHERE `a`.`NormalizedName` = @__normalizedName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (15ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime), @p20='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SET AUTOCOMMIT = 1;
+      INSERT INTO `AspNetUsers` (`Id`, `AccessFailedCount`, `ConcurrencyStamp`, `CreatedAt`, `Email`, `EmailConfirmed`, `FirstName`, `LastName`, `LockoutEnabled`, `LockoutEnd`, `NormalizedEmail`, `NormalizedUserName`, `PasswordHash`, `PhoneNumber`, `PhoneNumberConfirmed`, `PreferredLanguage`, `ProfilePicture`, `SecurityStamp`, `TwoFactorEnabled`, `UpdatedAt`, `UserName`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+      FROM `AspNetRoles` AS `a`
+      WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 255), @__p_1='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`UserId`, `a`.`RoleId`
+      FROM `AspNetUserRoles` AS `a`
+      WHERE (`a`.`UserId` = @__p_0) AND (`a`.`RoleId` = @__p_1)
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+      FROM `AspNetRoles` AS `a`
+      WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (32ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (Size = 255), @p22='?' (Size = 255), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p23='?' (Size = 4000), @p4='?' (DbType = DateTime), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (DbType = DateTime), @p21='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `AspNetUserRoles` (`RoleId`, `UserId`)
+      VALUES (@p0, @p1);
+      UPDATE `AspNetUsers` SET `AccessFailedCount` = @p2, `ConcurrencyStamp` = @p3, `CreatedAt` = @p4, `Email` = @p5, `EmailConfirmed` = @p6, `FirstName` = @p7, `LastName` = @p8, `LockoutEnabled` = @p9, `LockoutEnd` = @p10, `NormalizedEmail` = @p11, `NormalizedUserName` = @p12, `PasswordHash` = @p13, `PhoneNumber` = @p14, `PhoneNumberConfirmed` = @p15, `PreferredLanguage` = @p16, `ProfilePicture` = @p17, `SecurityStamp` = @p18, `TwoFactorEnabled` = @p19, `UpdatedAt` = @p20, `UserName` = @p21
+      WHERE `Id` = @p22 AND `ConcurrencyStamp` = @p23;
+      SELECT ROW_COUNT();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (17ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime), @p20='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SET AUTOCOMMIT = 1;
+      INSERT INTO `AspNetUsers` (`Id`, `AccessFailedCount`, `ConcurrencyStamp`, `CreatedAt`, `Email`, `EmailConfirmed`, `FirstName`, `LastName`, `LockoutEnabled`, `LockoutEnd`, `NormalizedEmail`, `NormalizedUserName`, `PasswordHash`, `PhoneNumber`, `PhoneNumberConfirmed`, `PreferredLanguage`, `ProfilePicture`, `SecurityStamp`, `TwoFactorEnabled`, `UpdatedAt`, `UserName`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+      FROM `AspNetRoles` AS `a`
+      WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 255), @__p_1='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`UserId`, `a`.`RoleId`
+      FROM `AspNetUserRoles` AS `a`
+      WHERE (`a`.`UserId` = @__p_0) AND (`a`.`RoleId` = @__p_1)
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+      FROM `AspNetRoles` AS `a`
+      WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (Size = 255), @p22='?' (Size = 255), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p23='?' (Size = 4000), @p4='?' (DbType = DateTime), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (DbType = DateTime), @p21='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `AspNetUserRoles` (`RoleId`, `UserId`)
+      VALUES (@p0, @p1);
+      UPDATE `AspNetUsers` SET `AccessFailedCount` = @p2, `ConcurrencyStamp` = @p3, `CreatedAt` = @p4, `Email` = @p5, `EmailConfirmed` = @p6, `FirstName` = @p7, `LastName` = @p8, `LockoutEnabled` = @p9, `LockoutEnd` = @p10, `NormalizedEmail` = @p11, `NormalizedUserName` = @p12, `PasswordHash` = @p13, `PhoneNumber` = @p14, `PhoneNumberConfirmed` = @p15, `PreferredLanguage` = @p16, `ProfilePicture` = @p17, `SecurityStamp` = @p18, `TwoFactorEnabled` = @p19, `UpdatedAt` = @p20, `UserName` = @p21
+      WHERE `Id` = @p22 AND `ConcurrencyStamp` = @p23;
+      SELECT ROW_COUNT();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (16ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime), @p20='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SET AUTOCOMMIT = 1;
+      INSERT INTO `AspNetUsers` (`Id`, `AccessFailedCount`, `ConcurrencyStamp`, `CreatedAt`, `Email`, `EmailConfirmed`, `FirstName`, `LastName`, `LockoutEnabled`, `LockoutEnd`, `NormalizedEmail`, `NormalizedUserName`, `PasswordHash`, `PhoneNumber`, `PhoneNumberConfirmed`, `PreferredLanguage`, `ProfilePicture`, `SecurityStamp`, `TwoFactorEnabled`, `UpdatedAt`, `UserName`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+      FROM `AspNetRoles` AS `a`
+      WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 255), @__p_1='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`UserId`, `a`.`RoleId`
+      FROM `AspNetUserRoles` AS `a`
+      WHERE (`a`.`UserId` = @__p_0) AND (`a`.`RoleId` = @__p_1)
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+      FROM `AspNetRoles` AS `a`
+      WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (Size = 255), @p22='?' (Size = 255), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p23='?' (Size = 4000), @p4='?' (DbType = DateTime), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (DbType = DateTime), @p21='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `AspNetUserRoles` (`RoleId`, `UserId`)
+      VALUES (@p0, @p1);
+      UPDATE `AspNetUsers` SET `AccessFailedCount` = @p2, `ConcurrencyStamp` = @p3, `CreatedAt` = @p4, `Email` = @p5, `EmailConfirmed` = @p6, `FirstName` = @p7, `LastName` = @p8, `LockoutEnabled` = @p9, `LockoutEnd` = @p10, `NormalizedEmail` = @p11, `NormalizedUserName` = @p12, `PasswordHash` = @p13, `PhoneNumber` = @p14, `PhoneNumberConfirmed` = @p15, `PreferredLanguage` = @p16, `ProfilePicture` = @p17, `SecurityStamp` = @p18, `TwoFactorEnabled` = @p19, `UpdatedAt` = @p20, `UserName` = @p21
+      WHERE `Id` = @p22 AND `ConcurrencyStamp` = @p23;
+      SELECT ROW_COUNT();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `Parents` AS `p`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (19ms) [Parameters=[@p0='?' (Size = 500), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime), @p3='?' (Size = 255), @p4='?' (Size = 20), @p5='?' (Size = 100), @p6='?' (Size = 10), @p7='?' (DbType = Boolean), @p8='?' (Size = 100), @p9='?' (Size = 50), @p10='?' (Size = 20), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime), @p13='?' (Size = 200), @p14='?' (Size = 20), @p15='?' (Size = 500), @p16='?' (DbType = DateTime), @p17='?' (DbType = DateTime), @p18='?' (Size = 255), @p19='?' (Size = 20), @p20='?' (Size = 100), @p21='?' (Size = 10), @p22='?' (DbType = Boolean), @p23='?' (Size = 100), @p24='?' (Size = 50), @p25='?' (Size = 20), @p26='?' (Size = 4000), @p27='?' (DbType = DateTime), @p28='?' (Size = 200), @p29='?' (Size = 20), @p30='?' (Size = 500), @p31='?' (DbType = DateTime), @p32='?' (DbType = DateTime), @p33='?' (Size = 255), @p34='?' (Size = 20), @p35='?' (Size = 100), @p36='?' (Size = 10), @p37='?' (DbType = Boolean), @p38='?' (Size = 100), @p39='?' (Size = 50), @p40='?' (Size = 20), @p41='?' (Size = 4000), @p42='?' (DbType = DateTime), @p43='?' (Size = 200), @p44='?' (Size = 20)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `Parents` (`Address`, `CreatedAt`, `DateOfBirth`, `Email`, `EmergencyContact`, `FirstName`, `Gender`, `IsActive`, `LastName`, `ParentType`, `PhoneNumber`, `ProfilePicture`, `UpdatedAt`, `Work`, `ZipCode`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+      SELECT `Id`
+      FROM `Parents`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Parents` (`Address`, `CreatedAt`, `DateOfBirth`, `Email`, `EmergencyContact`, `FirstName`, `Gender`, `IsActive`, `LastName`, `ParentType`, `PhoneNumber`, `ProfilePicture`, `UpdatedAt`, `Work`, `ZipCode`)
+      VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29);
+      SELECT `Id`
+      FROM `Parents`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Parents` (`Address`, `CreatedAt`, `DateOfBirth`, `Email`, `EmergencyContact`, `FirstName`, `Gender`, `IsActive`, `LastName`, `ParentType`, `PhoneNumber`, `ProfilePicture`, `UpdatedAt`, `Work`, `ZipCode`)
+      VALUES (@p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44);
+      SELECT `Id`
+      FROM `Parents`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `Teachers` AS `t`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 500), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?' (Size = 255), @p5='?' (Size = 100), @p6='?' (DbType = DateTime), @p7='?' (DbType = Boolean), @p8='?' (Size = 100), @p9='?' (DbType = Int32), @p10='?' (Size = 20), @p11='?' (Size = 4000), @p12='?' (DbType = Decimal), @p13='?' (Size = 100), @p14='?' (DbType = DateTime), @p15='?' (Size = 500), @p16='?' (DbType = Int32), @p17='?' (DbType = DateTime), @p18='?' (DbType = DateTime), @p19='?' (Size = 255), @p20='?' (Size = 100), @p21='?' (DbType = DateTime), @p22='?' (DbType = Boolean), @p23='?' (Size = 100), @p24='?' (DbType = Int32), @p25='?' (Size = 20), @p26='?' (Size = 4000), @p27='?' (DbType = Decimal), @p28='?' (Size = 100), @p29='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `Teachers` (`Address`, `AnnualLeaveDays`, `CreatedAt`, `DateOfBirth`, `Email`, `FirstName`, `HireDate`, `IsActive`, `LastName`, `MedicalLeaveDays`, `Phone`, `ProfilePicture`, `Salary`, `Specialization`, `UpdatedAt`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+      SELECT `Id`
+      FROM `Teachers`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Teachers` (`Address`, `AnnualLeaveDays`, `CreatedAt`, `DateOfBirth`, `Email`, `FirstName`, `HireDate`, `IsActive`, `LastName`, `MedicalLeaveDays`, `Phone`, `ProfilePicture`, `Salary`, `Specialization`, `UpdatedAt`)
+      VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29);
+      SELECT `Id`
+      FROM `Teachers`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `Children` AS `c`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (20ms) [Parameters=[@p0='?' (Size = 500), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?' (Size = 100), @p5='?' (Size = 10), @p6='?' (DbType = Boolean), @p7='?' (Size = 100), @p8='?' (Size = 500), @p9='?' (DbType = Int32), @p10='?' (Size = 4000), @p11='?' (DbType = DateTime), @p12='?' (Size = 500), @p13='?' (DbType = DateTime), @p14='?' (DbType = DateTime), @p15='?' (DbType = DateTime), @p16='?' (Size = 100), @p17='?' (Size = 10), @p18='?' (DbType = Boolean), @p19='?' (Size = 100), @p20='?' (Size = 500), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (DbType = DateTime), @p24='?' (Size = 500), @p25='?' (DbType = DateTime), @p26='?' (DbType = DateTime), @p27='?' (DbType = DateTime), @p28='?' (Size = 100), @p29='?' (Size = 10), @p30='?' (DbType = Boolean), @p31='?' (Size = 100), @p32='?' (Size = 500), @p33='?' (DbType = Int32), @p34='?' (Size = 4000), @p35='?' (DbType = DateTime), @p36='?' (Size = 500), @p37='?' (DbType = DateTime), @p38='?' (DbType = DateTime), @p39='?' (DbType = DateTime), @p40='?' (Size = 100), @p41='?' (Size = 10), @p42='?' (DbType = Boolean), @p43='?' (Size = 100), @p44='?' (Size = 500), @p45='?' (DbType = Int32), @p46='?' (Size = 4000), @p47='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `Children` (`Allergies`, `CreatedAt`, `DateOfBirth`, `EnrollmentDate`, `FirstName`, `Gender`, `IsActive`, `LastName`, `MedicalNotes`, `ParentId`, `ProfilePicture`, `UpdatedAt`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+      SELECT `Id`
+      FROM `Children`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Children` (`Allergies`, `CreatedAt`, `DateOfBirth`, `EnrollmentDate`, `FirstName`, `Gender`, `IsActive`, `LastName`, `MedicalNotes`, `ParentId`, `ProfilePicture`, `UpdatedAt`)
+      VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+      SELECT `Id`
+      FROM `Children`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Children` (`Allergies`, `CreatedAt`, `DateOfBirth`, `EnrollmentDate`, `FirstName`, `Gender`, `IsActive`, `LastName`, `MedicalNotes`, `ParentId`, `ProfilePicture`, `UpdatedAt`)
+      VALUES (@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35);
+      SELECT `Id`
+      FROM `Children`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Children` (`Allergies`, `CreatedAt`, `DateOfBirth`, `EnrollmentDate`, `FirstName`, `Gender`, `IsActive`, `LastName`, `MedicalNotes`, `ParentId`, `ProfilePicture`, `UpdatedAt`)
+      VALUES (@p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46, @p47);
+      SELECT `Id`
+      FROM `Children`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `DaycarePrograms` AS `d`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (36ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime), @p3='?' (Size = 500), @p4='?' (DbType = Time), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Time), @p8='?' (Size = 100), @p9='?' (DbType = DateTime), @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?' (DbType = DateTime), @p13='?' (Size = 500), @p14='?' (DbType = Time), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32), @p17='?' (DbType = Time), @p18='?' (Size = 100), @p19='?' (DbType = DateTime), @p20='?' (DbType = Int32), @p21='?' (DbType = DateTime), @p22='?' (DbType = DateTime), @p23='?' (Size = 500), @p24='?' (DbType = Time), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = Time), @p28='?' (Size = 100), @p29='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `DaycarePrograms` (`Capacity`, `CreatedAt`, `Date`, `Description`, `EndTime`, `MaxAge`, `MinAge`, `StartTime`, `Title`, `UpdatedAt`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+      SELECT `Id`
+      FROM `DaycarePrograms`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `DaycarePrograms` (`Capacity`, `CreatedAt`, `Date`, `Description`, `EndTime`, `MaxAge`, `MinAge`, `StartTime`, `Title`, `UpdatedAt`)
+      VALUES (@p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+      SELECT `Id`
+      FROM `DaycarePrograms`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `DaycarePrograms` (`Capacity`, `CreatedAt`, `Date`, `Description`, `EndTime`, `MaxAge`, `MinAge`, `StartTime`, `Title`, `UpdatedAt`)
+      VALUES (@p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29);
+      SELECT `Id`
+      FROM `DaycarePrograms`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `Classes` AS `c`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime), @p4='?' (Size = 500), @p5='?' (DbType = Boolean), @p6='?' (Size = 100), @p7='?' (Size = 200), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = DateTime), @p14='?' (Size = 500), @p15='?' (DbType = Boolean), @p16='?' (Size = 100), @p17='?' (Size = 200), @p18='?' (DbType = Int32), @p19='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `Classes` (`AgeGroupMax`, `AgeGroupMin`, `Capacity`, `CreatedAt`, `Description`, `IsActive`, `Name`, `Schedule`, `TeacherId`, `UpdatedAt`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+      SELECT `Id`
+      FROM `Classes`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Classes` (`AgeGroupMax`, `AgeGroupMin`, `Capacity`, `CreatedAt`, `Description`, `IsActive`, `Name`, `Schedule`, `TeacherId`, `UpdatedAt`)
+      VALUES (@p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+      SELECT `Id`
+      FROM `Classes`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `ProgramEnrollments` AS `p`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime), @p8='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `ProgramEnrollments` (`ChildId`, `EnrolledAt`, `ProgramId`)
+      VALUES (@p0, @p1, @p2);
+      SELECT `Id`
+      FROM `ProgramEnrollments`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `ProgramEnrollments` (`ChildId`, `EnrolledAt`, `ProgramId`)
+      VALUES (@p3, @p4, @p5);
+      SELECT `Id`
+      FROM `ProgramEnrollments`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `ProgramEnrollments` (`ChildId`, `EnrolledAt`, `ProgramId`)
+      VALUES (@p6, @p7, @p8);
+      SELECT `Id`
+      FROM `ProgramEnrollments`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `Attendances` AS `a`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 500), @p1='?' (DbType = DateTime), @p2='?' (Size = 500), @p3='?' (DbType = DateTime), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (DbType = DateTime), @p8='?' (Size = 500), @p9='?' (DbType = DateTime), @p10='?' (Size = 500), @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32), @p13='?' (DbType = DateTime), @p14='?' (DbType = DateTime), @p15='?' (DbType = DateTime), @p16='?' (Size = 500), @p17='?' (DbType = DateTime), @p18='?' (Size = 500), @p19='?' (DbType = DateTime), @p20='?' (DbType = Int32), @p21='?' (DbType = DateTime), @p22='?' (DbType = DateTime), @p23='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `Attendances` (`CheckInNotes`, `CheckInTime`, `CheckOutNotes`, `CheckOutTime`, `ChildId`, `CreatedAt`, `Date`, `UpdatedAt`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT `Id`
+      FROM `Attendances`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Attendances` (`CheckInNotes`, `CheckInTime`, `CheckOutNotes`, `CheckOutTime`, `ChildId`, `CreatedAt`, `Date`, `UpdatedAt`)
+      VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+      SELECT `Id`
+      FROM `Attendances`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Attendances` (`CheckInNotes`, `CheckInTime`, `CheckOutNotes`, `CheckOutTime`, `ChildId`, `CreatedAt`, `Date`, `UpdatedAt`)
+      VALUES (@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+      SELECT `Id`
+      FROM `Attendances`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `DailyActivities` AS `d`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 50), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime), @p4='?' (DbType = Time), @p5='?' (Size = 100), @p6='?' (Size = 50), @p7='?' (Size = 1000), @p8='?' (DbType = DateTime), @p9='?' (Size = 50), @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?' (DbType = Time), @p13='?' (Size = 100), @p14='?' (Size = 50), @p15='?' (Size = 1000), @p16='?' (DbType = DateTime), @p17='?' (Size = 50), @p18='?' (DbType = Int32), @p19='?' (DbType = DateTime), @p20='?' (DbType = Time), @p21='?' (Size = 100), @p22='?' (Size = 50), @p23='?' (Size = 1000)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `DailyActivities` (`ActivityTime`, `ActivityType`, `ChildId`, `CreatedAt`, `Duration`, `FoodItem`, `Mood`, `Notes`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT `Id`
+      FROM `DailyActivities`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `DailyActivities` (`ActivityTime`, `ActivityType`, `ChildId`, `CreatedAt`, `Duration`, `FoodItem`, `Mood`, `Notes`)
+      VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+      SELECT `Id`
+      FROM `DailyActivities`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `DailyActivities` (`ActivityTime`, `ActivityType`, `ChildId`, `CreatedAt`, `Duration`, `FoodItem`, `Mood`, `Notes`)
+      VALUES (@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+      SELECT `Id`
+      FROM `DailyActivities`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `Events` AS `e`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime), @p4='?' (Size = 500), @p5='?' (Size = 4000), @p6='?' (Size = 100), @p7='?' (Size = 200), @p8='?' (DbType = Decimal), @p9='?' (Size = 4000), @p10='?' (Size = 50), @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime), @p16='?' (Size = 500), @p17='?' (Size = 4000), @p18='?' (Size = 100), @p19='?' (Size = 200), @p20='?' (DbType = Decimal), @p21='?' (Size = 4000), @p22='?' (Size = 50), @p23='?' (DbType = DateTime), @p24='?' (DbType = Int32), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = DateTime), @p28='?' (Size = 500), @p29='?' (Size = 4000), @p30='?' (Size = 100), @p31='?' (Size = 200), @p32='?' (DbType = Decimal), @p33='?' (Size = 4000), @p34='?' (Size = 50), @p35='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `Events` (`AgeFrom`, `AgeTo`, `Capacity`, `CreatedAt`, `Description`, `Image`, `Name`, `Place`, `Price`, `Time`, `Type`, `UpdatedAt`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+      SELECT `Id`
+      FROM `Events`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Events` (`AgeFrom`, `AgeTo`, `Capacity`, `CreatedAt`, `Description`, `Image`, `Name`, `Place`, `Price`, `Time`, `Type`, `UpdatedAt`)
+      VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+      SELECT `Id`
+      FROM `Events`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Events` (`AgeFrom`, `AgeTo`, `Capacity`, `CreatedAt`, `Description`, `Image`, `Name`, `Place`, `Price`, `Time`, `Type`, `UpdatedAt`)
+      VALUES (@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35);
+      SELECT `Id`
+      FROM `Events`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `EventParticipants` AS `e`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 500), @p4='?' (DbType = DateTime), @p5='?' (Size = 4000), @p6='?' (Size = 20), @p7='?' (DbType = DateTime), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = Int32), @p11='?' (Size = 500), @p12='?' (DbType = DateTime), @p13='?' (Size = 4000), @p14='?' (Size = 20), @p15='?' (DbType = DateTime), @p16='?' (DbType = Int32), @p17='?' (DbType = DateTime), @p18='?' (DbType = Int32), @p19='?' (Size = 500), @p20='?' (DbType = DateTime), @p21='?' (Size = 4000), @p22='?' (Size = 20), @p23='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `EventParticipants` (`ChildId`, `CreatedAt`, `EventId`, `Notes`, `RegisteredAt`, `RegisteredBy`, `Status`, `UpdatedAt`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+      SELECT `Id`
+      FROM `EventParticipants`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `EventParticipants` (`ChildId`, `CreatedAt`, `EventId`, `Notes`, `RegisteredAt`, `RegisteredBy`, `Status`, `UpdatedAt`)
+      VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+      SELECT `Id`
+      FROM `EventParticipants`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `EventParticipants` (`ChildId`, `CreatedAt`, `EventId`, `Notes`, `RegisteredAt`, `RegisteredBy`, `Status`, `UpdatedAt`)
+      VALUES (@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+      SELECT `Id`
+      FROM `EventParticipants`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM `Fees` AS `f`)
+fail: Microsoft.EntityFrameworkCore.Database.Command[20102]
+      Failed executing DbCommand (5ms) [Parameters=[@p0='?' (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime), @p3='?' (Size = 500), @p4='?' (DbType = DateTime), @p5='?' (Size = 20), @p6='?' (Size = 1000), @p7='?' (DbType = DateTime), @p8='?' (Size = 50), @p9='?' (Size = 1000), @p10='?' (Size = 20), @p11='?' (Size = 255), @p12='?' (DbType = DateTime), @p13='?' (DbType = Decimal), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime), @p16='?' (Size = 500), @p17='?' (DbType = DateTime), @p18='?' (Size = 20), @p19='?' (Size = 1000), @p20='?' (DbType = DateTime), @p21='?' (Size = 50), @p22='?' (Size = 1000), @p23='?' (Size = 20), @p24='?' (Size = 255), @p25='?' (DbType = DateTime), @p26='?' (DbType = Decimal), @p27='?' (DbType = Int32), @p28='?' (DbType = DateTime), @p29='?' (Size = 500), @p30='?' (DbType = DateTime), @p31='?' (Size = 20), @p32='?' (Size = 1000), @p33='?' (DbType = DateTime), @p34='?' (Size = 50), @p35='?' (Size = 1000), @p36='?' (Size = 20), @p37='?' (Size = 255), @p38='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO `Fees` (`Amount`, `ChildId`, `CreatedAt`, `Description`, `DueDate`, `FeeType`, `Notes`, `PaidDate`, `PaymentMethod`, `PaymentNotes`, `Status`, `StripePaymentIntentId`, `UpdatedAt`)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+      SELECT `Id`
+      FROM `Fees`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Fees` (`Amount`, `ChildId`, `CreatedAt`, `Description`, `DueDate`, `FeeType`, `Notes`, `PaidDate`, `PaymentMethod`, `PaymentNotes`, `Status`, `StripePaymentIntentId`, `UpdatedAt`)
+      VALUES (@p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25);
+      SELECT `Id`
+      FROM `Fees`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+      
+      INSERT INTO `Fees` (`Amount`, `ChildId`, `CreatedAt`, `Description`, `DueDate`, `FeeType`, `Notes`, `PaidDate`, `PaymentMethod`, `PaymentNotes`, `Status`, `StripePaymentIntentId`, `UpdatedAt`)
+      VALUES (@p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38);
+      SELECT `Id`
+      FROM `Fees`
+      WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+fail: Microsoft.EntityFrameworkCore.Update[10000]
+      An exception occurred in the database while saving changes for context type 'DaycareAPI.Data.ApplicationDbContext'.
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+       ---> MySqlConnector.MySqlException (0x80004005): Unknown column 'PaymentMethod' in 'field list'
+         at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+         at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+         at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+         at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+         at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+         at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+         at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+         at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+       ---> MySqlConnector.MySqlException (0x80004005): Unknown column 'PaymentMethod' in 'field list'
+         at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+         at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+         at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+         at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+         at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+         at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+         at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+         at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+fail: Program[0]
+      An error occurred while seeding the database.
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+       ---> MySqlConnector.MySqlException (0x80004005): Unknown column 'PaymentMethod' in 'field list'
+         at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+         at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+         at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+         at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+         at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+         at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+         at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+         at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+         at DaycareAPI.Data.DatabaseSeeder.SeedFees(ApplicationDbContext context) in /var/www/html/miniminds/miniminds-api/Data/DatabaseSeeder.cs:line 235
+         at DaycareAPI.Data.DatabaseSeeder.SeedAsync(ApplicationDbContext context, UserManager`1 userManager, RoleManager`1 roleManager) in /var/www/html/miniminds/miniminds-api/Data/DatabaseSeeder.cs:line 23
+         at Program.<Main>$(String[] args) in /var/www/html/miniminds/miniminds-api/Program.cs:line 120
+Server running at: http://0.0.0.0:5001
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://0.0.0.0:5001
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /var/www/html/miniminds/miniminds-api
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (32ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`Email` = @__userId_0
+      LIMIT 1
+Converting email admin@daycare.com to user GUID...
+Found user with GUID: f4901870-4e5d-4466-9229-22887c931539
+GetNotifications - Original: admin@daycare.com, Converted: f4901870-4e5d-4466-9229-22887c931539, Role: Admin, IncludeRead: True
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`CreatedAt`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`FirstName`, `a`.`LastName`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`PreferredLanguage`, `a`.`ProfilePicture`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UpdatedAt`, `a`.`UserName`
+      FROM `AspNetUsers` AS `a`
+      WHERE `a`.`Email` = @__userId_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `h`.`Id`, `h`.`Color`, `h`.`CreatedAt`, `h`.`Date`, `h`.`Description`, `h`.`IsRecurring`, `h`.`Name`, `h`.`RecurrenceType`, `h`.`UpdatedAt`
+      FROM `Holidays` AS `h`
+      ORDER BY `h`.`Date`
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `n`.`Id`, `n`.`CreatedAt`, `n`.`IsRead`, `n`.`Message`, `n`.`RedirectUrl`, `n`.`Title`, `n`.`Type`, `n`.`UserId`
+      FROM `Notifications` AS `n`
+      ORDER BY `n`.`CreatedAt` DESC
+Found 0 notifications for user f4901870-4e5d-4466-9229-22887c931539
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM `Notifications` AS `n`
+      WHERE NOT (`n`.`IsRead`)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `e`.`Id`, `e`.`AgeFrom`, `e`.`AgeTo`, `e`.`Capacity`, `e`.`CreatedAt`, `e`.`Description`, `e`.`Image`, `e`.`Name`, `e`.`Place`, `e`.`Price`, `e`.`Time`, `e`.`Type`, `e`.`UpdatedAt`, `t`.`Id`, `t`.`ChildId`, `t`.`CreatedAt`, `t`.`EventId`, `t`.`Notes`, `t`.`RegisteredAt`, `t`.`RegisteredBy`, `t`.`Status`, `t`.`UpdatedAt`, `t`.`Id0`, `t`.`Allergies`, `t`.`CreatedAt0`, `t`.`DateOfBirth`, `t`.`EnrollmentDate`, `t`.`FirstName`, `t`.`Gender`, `t`.`IsActive`, `t`.`LastName`, `t`.`MedicalNotes`, `t`.`ParentId`, `t`.`ProfilePicture`, `t`.`UpdatedAt0`
+      FROM `Events` AS `e`
+      LEFT JOIN (
+          SELECT `e0`.`Id`, `e0`.`ChildId`, `e0`.`CreatedAt`, `e0`.`EventId`, `e0`.`Notes`, `e0`.`RegisteredAt`, `e0`.`RegisteredBy`, `e0`.`Status`, `e0`.`UpdatedAt`, `c`.`Id` AS `Id0`, `c`.`Allergies`, `c`.`CreatedAt` AS `CreatedAt0`, `c`.`DateOfBirth`, `c`.`EnrollmentDate`, `c`.`FirstName`, `c`.`Gender`, `c`.`IsActive`, `c`.`LastName`, `c`.`MedicalNotes`, `c`.`ParentId`, `c`.`ProfilePicture`, `c`.`UpdatedAt` AS `UpdatedAt0`
+          FROM `EventParticipants` AS `e0`
+          INNER JOIN `Children` AS `c` ON `e0`.`ChildId` = `c`.`Id`
+      ) AS `t` ON `e`.`Id` = `t`.`EventId`
+      ORDER BY `e`.`CreatedAt` DESC, `e`.`Id`, `t`.`Id`
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `c`.`Id`, `c`.`Allergies`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`EnrollmentDate`, `c`.`FirstName`, `c`.`Gender`, `c`.`IsActive`, `c`.`LastName`, `c`.`MedicalNotes`, `c`.`ParentId`, `c`.`ProfilePicture`, `c`.`UpdatedAt`, `p`.`Id`, `p`.`Address`, `p`.`CreatedAt`, `p`.`DateOfBirth`, `p`.`Email`, `p`.`EmergencyContact`, `p`.`FirstName`, `p`.`Gender`, `p`.`IsActive`, `p`.`LastName`, `p`.`ParentType`, `p`.`PhoneNumber`, `p`.`ProfilePicture`, `p`.`UpdatedAt`, `p`.`Work`, `p`.`ZipCode`
+      FROM `Children` AS `c`
+      INNER JOIN `Parents` AS `p` ON `c`.`ParentId` = `p`.`Id`
+      ORDER BY `c`.`CreatedAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__startDate_0='?' (DbType = DateTime), @__endDate_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      SELECT `d`.`Id`, `d`.`ActivityTime`, `d`.`ActivityType`, `d`.`ChildId`, `d`.`CreatedAt`, `d`.`Duration`, `d`.`FoodItem`, `d`.`Mood`, `d`.`Notes`, `c`.`Id`, `c`.`Allergies`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`EnrollmentDate`, `c`.`FirstName`, `c`.`Gender`, `c`.`IsActive`, `c`.`LastName`, `c`.`MedicalNotes`, `c`.`ParentId`, `c`.`ProfilePicture`, `c`.`UpdatedAt`
+      FROM `DailyActivities` AS `d`
+      INNER JOIN `Children` AS `c` ON `d`.`ChildId` = `c`.`Id`
+      WHERE (`d`.`ActivityTime` >= @__startDate_0) AND (`d`.`ActivityTime` < @__endDate_1)
+      ORDER BY `d`.`ActivityTime` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `p`.`Id`, `p`.`Address`, `p`.`CreatedAt`, `p`.`DateOfBirth`, `p`.`Email`, `p`.`EmergencyContact`, `p`.`FirstName`, `p`.`Gender`, `p`.`IsActive`, `p`.`LastName`, `p`.`ParentType`, `p`.`PhoneNumber`, `p`.`ProfilePicture`, `p`.`UpdatedAt`, `p`.`Work`, `p`.`ZipCode`, `c`.`Id`, `c`.`Allergies`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`EnrollmentDate`, `c`.`FirstName`, `c`.`Gender`, `c`.`IsActive`, `c`.`LastName`, `c`.`MedicalNotes`, `c`.`ParentId`, `c`.`ProfilePicture`, `c`.`UpdatedAt`
+      FROM `Parents` AS `p`
+      LEFT JOIN `Children` AS `c` ON `p`.`Id` = `c`.`ParentId`
+      ORDER BY `p`.`CreatedAt` DESC, `p`.`Id`
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `t`.`Id`, `t`.`Address`, `t`.`AnnualLeaveDays`, `t`.`CreatedAt`, `t`.`DateOfBirth`, `t`.`Email`, `t`.`FirstName`, `t`.`HireDate`, `t`.`IsActive`, `t`.`LastName`, `t`.`MedicalLeaveDays`, `t`.`Phone`, `t`.`ProfilePicture`, `t`.`Salary`, `t`.`Specialization`, `t`.`UpdatedAt`
+      FROM `Teachers` AS `t`
+      WHERE `t`.`IsActive`
+      ORDER BY `t`.`CreatedAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `e`.`Id`, `e`.`AgeFrom`, `e`.`AgeTo`, `e`.`Capacity`, `e`.`CreatedAt`, `e`.`Description`, `e`.`Image`, `e`.`Name`, `e`.`Place`, `e`.`Price`, `e`.`Time`, `e`.`Type`, `e`.`UpdatedAt`, `t`.`Id`, `t`.`ChildId`, `t`.`CreatedAt`, `t`.`EventId`, `t`.`Notes`, `t`.`RegisteredAt`, `t`.`RegisteredBy`, `t`.`Status`, `t`.`UpdatedAt`, `t`.`Id0`, `t`.`Allergies`, `t`.`CreatedAt0`, `t`.`DateOfBirth`, `t`.`EnrollmentDate`, `t`.`FirstName`, `t`.`Gender`, `t`.`IsActive`, `t`.`LastName`, `t`.`MedicalNotes`, `t`.`ParentId`, `t`.`ProfilePicture`, `t`.`UpdatedAt0`
+      FROM `Events` AS `e`
+      LEFT JOIN (
+          SELECT `e0`.`Id`, `e0`.`ChildId`, `e0`.`CreatedAt`, `e0`.`EventId`, `e0`.`Notes`, `e0`.`RegisteredAt`, `e0`.`RegisteredBy`, `e0`.`Status`, `e0`.`UpdatedAt`, `c`.`Id` AS `Id0`, `c`.`Allergies`, `c`.`CreatedAt` AS `CreatedAt0`, `c`.`DateOfBirth`, `c`.`EnrollmentDate`, `c`.`FirstName`, `c`.`Gender`, `c`.`IsActive`, `c`.`LastName`, `c`.`MedicalNotes`, `c`.`ParentId`, `c`.`ProfilePicture`, `c`.`UpdatedAt` AS `UpdatedAt0`
+          FROM `EventParticipants` AS `e0`
+          INNER JOIN `Children` AS `c` ON `e0`.`ChildId` = `c`.`Id`
+      ) AS `t` ON `e`.`Id` = `t`.`EventId`
+      ORDER BY `e`.`CreatedAt` DESC, `e`.`Id`, `t`.`Id`
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `e`.`Id`, `e`.`AgeFrom`, `e`.`AgeTo`, `e`.`Capacity`, `e`.`CreatedAt`, `e`.`Description`, `e`.`Image`, `e`.`Name`, `e`.`Place`, `e`.`Price`, `e`.`Time`, `e`.`Type`, `e`.`UpdatedAt`, `t`.`Id`, `t`.`ChildId`, `t`.`CreatedAt`, `t`.`EventId`, `t`.`Notes`, `t`.`RegisteredAt`, `t`.`RegisteredBy`, `t`.`Status`, `t`.`UpdatedAt`, `t`.`Id0`, `t`.`Allergies`, `t`.`CreatedAt0`, `t`.`DateOfBirth`, `t`.`EnrollmentDate`, `t`.`FirstName`, `t`.`Gender`, `t`.`IsActive`, `t`.`LastName`, `t`.`MedicalNotes`, `t`.`ParentId`, `t`.`ProfilePicture`, `t`.`UpdatedAt0`
+      FROM `Events` AS `e`
+      LEFT JOIN (
+          SELECT `e0`.`Id`, `e0`.`ChildId`, `e0`.`CreatedAt`, `e0`.`EventId`, `e0`.`Notes`, `e0`.`RegisteredAt`, `e0`.`RegisteredBy`, `e0`.`Status`, `e0`.`UpdatedAt`, `c`.`Id` AS `Id0`, `c`.`Allergies`, `c`.`CreatedAt` AS `CreatedAt0`, `c`.`DateOfBirth`, `c`.`EnrollmentDate`, `c`.`FirstName`, `c`.`Gender`, `c`.`IsActive`, `c`.`LastName`, `c`.`MedicalNotes`, `c`.`ParentId`, `c`.`ProfilePicture`, `c`.`UpdatedAt` AS `UpdatedAt0`
+          FROM `EventParticipants` AS `e0`
+          INNER JOIN `Children` AS `c` ON `e0`.`ChildId` = `c`.`Id`
+      ) AS `t` ON `e`.`Id` = `t`.`EventId`
+      ORDER BY `e`.`CreatedAt` DESC, `e`.`Id`, `t`.`Id`
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `h`.`Id`, `h`.`Color`, `h`.`CreatedAt`, `h`.`Date`, `h`.`Description`, `h`.`IsRecurring`, `h`.`Name`, `h`.`RecurrenceType`, `h`.`UpdatedAt`
+      FROM `Holidays` AS `h`
+      ORDER BY `h`.`Date`
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT `p`.`Id`, `p`.`Address`, `p`.`CreatedAt`, `p`.`DateOfBirth`, `p`.`Email`, `p`.`EmergencyContact`, `p`.`FirstName`, `p`.`Gender`, `p`.`IsActive`, `p`.`LastName`, `p`.`ParentType`, `p`.`PhoneNumber`, `p`.`ProfilePicture`, `p`.`UpdatedAt`, `p`.`Work`, `p`.`ZipCode`, `c`.`Id`, `c`.`Allergies`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`EnrollmentDate`, `c`.`FirstName`, `c`.`Gender`, `c`.`IsActive`, `c`.`LastName`, `c`.`MedicalNotes`, `c`.`ParentId`, `c`.`ProfilePicture`, `c`.`UpdatedAt`
+      FROM `Parents` AS `p`
+      LEFT JOIN `Children` AS `c` ON `p`.`Id` = `c`.`ParentId`
+      ORDER BY `p`.`CreatedAt` DESC, `p`.`Id`
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__currentUserId_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+      SELECT `m`.`Id`, `m`.`SenderId`, CONCAT(CONCAT(`a`.`FirstName`, ' '), `a`.`LastName`) AS `SenderName`, `m`.`Subject`, `m`.`Content`, `m`.`SentAt`, `m`.`IsRead`, `m`.`RecipientType`, (
+          SELECT COUNT(*)
+          FROM `Messages` AS `m0`
+          WHERE `m`.`Id` = `m0`.`ParentMessageId`) AS `ReplyCount`
+      FROM `Messages` AS `m`
+      INNER JOIN `AspNetUsers` AS `a` ON `m`.`SenderId` = `a`.`Id`
+      WHERE ((`m`.`RecipientId` = @__currentUserId_0) OR (`m`.`RecipientType` = 'all')) AND `m`.`ParentMessageId` IS NULL
+      ORDER BY `m`.`SentAt` DESC
+fail: Microsoft.AspNetCore.Server.Kestrel[13]
+      Connection id "0HNH46MK6BFVS", Request id "0HNH46MK6BFVS:0000008C": An unhandled exception was thrown by the application.
+      MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+         at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1063
+         at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 425
+         at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 428
+         at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 433
+         at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 111
+         at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 40
+         at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 919
+         at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 419
+         at Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(String connectionString)
+         at Program.<>c__DisplayClass0_0.<<Main>$>b__0(DbContextOptionsBuilder options) in /var/www/html/miniminds/miniminds-api/Program.cs:line 15
+         at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.CreateDbContextOptions[TContext](IServiceProvider applicationServiceProvider, Action`2 optionsAction)
+         at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+         at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+         at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+         at lambda_method1762(Closure, IServiceProvider, Object[])
+         at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

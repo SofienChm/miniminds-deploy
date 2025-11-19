@@ -1,0 +1,114 @@
+<div *ngIf="isParent" class="parent-detailchild font-inter">
+  <app-parent-child-header-simple *ngIf="isParent"
+    title="Fee Receipt"
+  >
+  </app-parent-child-header-simple>
+</div>
+<div class="container-fluid mt-4">
+  <app-title-page *ngIf="!isParent"
+    title="Fee Receipt" 
+    subtitle="View fee details and receipt"
+    icon="bi bi-receipt"
+    [breadcrumbs]="breadcrumbs">
+  </app-title-page>
+
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && fee" class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="white-box">
+            <h6><b>RECEIPT</b><span class="float-end">#{{ fee.id }}</span></h6>
+            <hr>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="float-start">
+                  <address>
+                    <p class="font-bold">BILL FROM :</p>
+                    <img loading="lazy" src="assets/images/invoice_logo.png" alt="logo" class="logo-default" style="max-width: 150px;">
+                    <p class="text-muted m-l-5">
+                      MiniMinds Daycare, <br>
+                      123 Main Street, <br>
+                      City, State 12345
+                    </p>
+                  </address>
+                </div>
+                <div class="float-end text-end">
+                  <address>
+                    <p class="addr-font-h3 font-bold">BILL TO :</p>
+                    <p class="font-bold addr-font-h4">{{ fee.parentName }}</p>
+                    <p class="text-muted m-l-30">
+                      {{ fee.parentEmail }}
+                    </p>
+                    <p class="m-t-30"><b>Due Date :</b> {{ fee.dueDate | date:'mediumDate' }}</p>
+                    <p><b>Status :</b><span [class]="'badge ' + (fee.status === 'paid' ? 'bg-success' : fee.status === 'overdue' ? 'bg-danger' : 'bg-warning')">{{ fee.status | titlecase }}</span></p>
+                    <p *ngIf="fee.paidDate"><b>Paid Date :</b> {{ fee.paidDate | date:'mediumDate' }}</p>
+                  </address>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="table-responsive m-t-40">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th class="text-center">#</th>
+                        <th>Child Name</th>
+                        <th>Description</th>
+                        <th>Fee Type</th>
+                        <th class="text-end">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-center">1</td>
+                        <td>{{ fee.childName }}</td>
+                        <td>{{ fee.description }}</td>
+                        <td><span [class]="'badge ' + (fee.feeType === 'monthly' ? 'bg-primary' : fee.feeType === 'one-time' ? 'bg-info' : 'bg-danger')">{{ fee.feeType | titlecase }}</span></td>
+                        <td class="text-end">\${{ fee.amount | number:'1.2-2' }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="float-end m-t-30 text-end">
+                  <hr>
+                  <h6><b>Total :</b> \${{ fee.amount | number:'1.2-2' }}</h6>
+                </div>
+                <div class="clearfix"></div>
+                <hr>
+                <div *ngIf="fee.notes" class="mb-3">
+                  <strong>Notes:</strong>
+                  <p class="text-muted">{{ fee.notes }}</p>
+                </div>
+                <div *ngIf="fee.paymentNotes" class="mb-3">
+                  <strong>Payment Notes:</strong>
+                  <p class="text-muted">{{ fee.paymentNotes }}</p>
+                </div>
+                <div class="text-end">
+                  <button class="btn btn-secondary me-2" (click)="goBack()">
+                    <i class="bi bi-arrow-left me-2"></i>Back
+                  </button>
+                  <button *ngIf="isParent() && fee.status === 'pending'" class="btn btn-success me-2" (click)="payOnline()" [disabled]="loading">
+                    <i class="bi bi-credit-card me-2"></i>Pay Online
+                  </button>
+                  <button *ngIf="!isParent()" class="btn btn-primary me-2" (click)="editFee()">
+                    <i class="bi bi-pencil me-2"></i>Edit
+                  </button>
+                  <button class="btn btn-info" (click)="print()">
+                    <i class="bi bi-printer me-2"></i>Print
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

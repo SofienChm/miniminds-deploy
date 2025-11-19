@@ -1,0 +1,147 @@
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.badge {
+  font-size: 0.875rem;
+}
+
+img {
+  object-fit: cover;
+}
+
+.card-parent_information{
+  &.parent{
+    .card-header{
+      border-bottom: 0 !important;
+    }
+    .title{
+      font-size: 14px;
+      font-weight: 500;
+      color: #202C4B;
+    }
+    .content{
+      font-size: 14px;
+      font-weight: 400;
+      color: rgb(106, 114, 135);
+    }
+  }
+  .parent-image{
+    .avatar{
+      width: 2.813rem;
+      height: 2.813rem;
+      font-size: 1rem;
+      border: 1px solid #00000047;
+      border-radius: 4px;
+    }
+  }
+  .parent-info{
+    p{
+      &:first-child{
+        font-size: 14px;
+        color: #202C4B !important;
+        font-weight: 500;
+      }
+      &:last-child{
+        font-size: 14px;
+        color: rgb(106, 114, 135) !important;
+        font-weight: 400;
+        a{
+          color: rgb(106, 114, 135) !important;
+        }
+      }
+    }
+  }
+  .parent-text{
+    h6{
+      margin-bottom: 0;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    p{
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .badge{
+      background: none;
+      color: #1ABE17;
+      padding: 0.25rem 0.45rem;
+      text-transform: capitalize;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      font-size: 10.5px;
+    }
+  }
+  .action-btn{
+    display: flex;
+    flex-direction: column;
+    button.btn {
+      background: #506ee4;
+      padding: 4px;
+      line-height: 0.8;
+      margin-bottom: 3px;
+    }
+    button.btn i {
+      font-size: 10px;
+      color: white;
+      padding: 0;
+      line-height: 0;
+    }
+  }
+  .card-footer{
+    background: transparent;
+    .view-parent{
+      justify-self: flex-end;
+    }
+  }
+}
+
+.card-detail_pages{
+    &.parent-new{
+      box-shadow: none;
+      border: none;
+    }
+  &.card-child_detail{
+    .parent-new{
+      align-content: flex-start;
+      box-shadow: none;
+      border: none;
+    }
+  }
+  .card-header{
+    .row_direction{
+      display: flex;
+      flex-direction: column;
+      .avatar{
+        width: 7rem;
+        height: 7rem;
+        border: none !important;
+        position: relative;
+        img{
+          border-radius: 10px;
+        }
+      }
+      .badge{
+        position: absolute;
+        bottom: 10px;
+        right: -38px;
+        background: green;
+        border-radius: 10px;
+        font-size: 12.5px;
+        padding: 0.35rem 0.65rem;
+        &.type{
+          background:#506EE4;
+        }
+      }
+      .overflow-hidden{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+

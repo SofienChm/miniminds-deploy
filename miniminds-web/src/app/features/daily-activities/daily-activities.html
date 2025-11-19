@@ -1,0 +1,401 @@
+<div *ngIf="isParent">
+  <app-parent-child-header
+    title="Daily Report"
+    [children]="children"
+    [currentChildIndex]="currentChildIndex"
+    [selectedDate]="selectedDate"
+    (onBack)="back()"
+    (onPrevChild)="prevChild()"
+    (onNextChild)="nextChild()"
+    (onDateChange)="selectedDate = $event; onDateChange()">
+  </app-parent-child-header>
+</div>
+
+<div [class]="isParent ? '' : 'container-fluid mt-4'">
+  <app-title-page *ngIf="!isParent" 
+    title="Daily Report" 
+    subtitle="Track and manage children's daily activities"
+    icon="bi bi-clipboard-data"
+    [breadcrumbs]="[{label: 'Dashboard', url: '/dashboard'}, {label: 'Daily Report'}]">
+  </app-title-page>
+</div>
+
+
+
+<!-- parent view-->
+<div class="container-fluid" *ngIf="isParent">
+
+  <div class="activities-container">
+    <h2 *ngIf="children.length > 1">Today's Activities - {{ getSelectedChildName() }} 
+      <span *ngIf="loading" class="spinner-border spinner-border-sm ms-2" role="status"></span>
+    </h2>
+    <div *ngIf="!loading && activities.length === 0" class="text-center py-4 text-muted">
+      <i class="bi bi-calendar-x fs-1 mb-2"></i>
+      <p>No activities recorded for today</p>
+    </div>
+    <div *ngIf="activities.length > 0" class="mb-5" [style.opacity]="loading ? '0.5' : '1'">
+      <div class="activity-row" *ngFor="let activityGroup of getActivityRows(); let i = index">
+        <div class="activity-card" 
+            *ngFor="let activity of activityGroup" 
+            [class]="activity.activityType.toLowerCase()">
+          <div class="activity-time">{{ activity.activityTime | date:'shortTime' }}</div>
+          <div class="activity-title">{{ activity.activityType }}</div>
+          <div class="activity-icons">{{ getActivityIcon(activity.activityType) }}</div>
+          <div class="activity-notes" *ngIf="activity.notes">{{ activity.notes }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Stats Overview -->
+<div class="container-fluid" *ngIf="!isParent">
+  <div class="row mb-4">
+    <div class="col-xl-8 first-dashbord-card">
+      <div class="row">
+        <div class="col-xl-3">
+          <div class="card children">
+            <div class="card-body">
+              <div class="percentage">
+                <div class="text-success">+12%</div>
+                <i class="bi bi-egg-fried"></i>
+              </div>
+              <div class="nbr">{{ getActivityCount('Meal') + getActivityCount('Snack') }}</div>
+              <div class="title-item">Meals & Snacks</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="card event">
+            <div class="card-body">
+              <div class="percentage">
+                <div class="text-success">+8%</div>
+                <i class="bi bi-moon-stars"></i>
+              </div>
+              <div class="nbr">{{ getActivityCount('Nap') }}</div>
+              <div class="title-item">Nap Times</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="card fee">
+            <div class="card-body">
+              <div class="percentage">
+                <div class="text-success">+15%</div>
+                <i class="bi bi-controller"></i>
+              </div>
+              <div class="nbr">{{ getActivityCount('Play') + getActivityCount('Learning') }}</div>
+              <div class="title-item">Activities</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="card children">
+            <div class="card-body">
+              <div class="percentage">
+                <div class="text-success">{{ activities.length > 0 ? '+' : '' }}{{ activities.length > 10 ? '20' : '5' }}%</div>
+                <i class="bi bi-list-check"></i>
+              </div>
+              <div class="nbr">{{ activities.length }}</div>
+              <div class="title-item">Total Activities</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Charts Row -->
+        <div class="col-xl-6 mt-4">
+          <div class="card card-dashbord-all">
+            <div class="card-header">
+              <h5 class="mb-0"><i class="bi bi-pie-chart"></i>Activity Distribution</h5>
+            </div>
+            <div class="card-body">
+              <div class="chart-container text-center" style="height: 200px; width: 200px; margin: 0 auto;">
+                <canvas #activityChart baseChart [data]="activityChartData" [options]="chartOptions" type="doughnut"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-6 mt-4">
+          <div class="card card-dashbord-all">
+            <div class="card-header">
+              <h5 class="mb-0"><i class="bi bi-graph-up"></i>Daily Timeline</h5>
+            </div>
+            <div class="card-body">
+              <div style="position: relative; height: 200px;">
+                <canvas #timelineChart baseChart [data]="timelineChartData" [options]="timelineChartOptions" type="line"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Filters & Controls -->
+    <div class="col-xl-4">
+      <div class="card card-dashbord-all mb-3">
+        <div class="card-header">
+          <h5 class="mb-0"><i class="bi bi-funnel"></i>Filters & Controls</h5>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-control" [(ngModel)]="selectedDate" (change)="onDateChange()">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Child</label>
+            <select class="form-select" [(ngModel)]="selectedChildId" (change)="onChildChange()">
+              <option [value]="null">All Children ({{ children.length }})</option>
+              <option *ngFor="let child of children" [value]="child.id">
+                {{ child.firstName }} {{ child.lastName }}
+              </option>
+            </select>
+          </div>
+          <div class="d-grid gap-2" *ngIf="canEdit()">
+            <button class="btn btn-outline-primary" (click)="showBulkAdd = true">
+              <i class="bi bi-plus-circle me-2"></i>Add Activity
+            </button>
+            <button class="btn btn-outline-success" (click)="exportReport()">
+              <i class="bi bi-download me-2"></i>Export Report
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Controls -->
+  <div class="bg-white p-3 border rounded-1 d-flex align-items-center justify-content-between flex-wrap mb-4">
+    <h4 class="title-filter">Activity Timeline</h4>
+    <div class="d-flex align-items-center flex-wrap gap-2">
+      <!-- View Toggle -->
+      <div class="d-flex align-items-center bg-white border rounded-2 p-1 me-2">
+        <button 
+          class="btn btn-icon btn-sm me-1" 
+          [class.bg-light]="viewMode === 'timeline'"
+          [class.primary-hover]="viewMode !== 'timeline'"
+          (click)="viewMode = 'timeline'">
+          <i class="bi bi-clock"></i>
+        </button>
+        <button 
+          class="btn btn-icon btn-sm" 
+          [class.bg-light]="viewMode === 'grid'"
+          [class.primary-hover]="viewMode !== 'grid'"
+          (click)="viewMode = 'grid'">
+          <i class="bi bi-grid"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Timeline View -->
+  <div *ngIf="!loading && viewMode === 'timeline' && activities.length > 0">
+    <div *ngFor="let period of ['Morning', 'Afternoon', 'Evening']" class="mb-4">
+      <div *ngIf="getTimelineGroups()[period] && getTimelineGroups()[period]!.length > 0">
+        <div class="card card-dashbord-all">
+          <div class="card-header">
+            <h5 class="mb-0">
+              <i class="bi" [class.bi-sun]="period === 'Morning'" 
+                 [class.bi-cloud-sun]="period === 'Afternoon'"
+                 [class.bi-moon-stars]="period === 'Evening'"></i>
+              {{ period }} Activities
+              <span class="badge bg-primary ms-2">{{ getTimelineGroups()[period]!.length }}</span>
+            </h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div *ngFor="let activity of getTimelineGroups()[period]!" class="col-md-6 col-lg-4 mb-3">
+                <div class="card h-100 border activity-card-item">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                      <div class="d-flex align-items-center">
+                        <div class="activity-icon me-2" [class]="activity.activityType.toLowerCase()">
+                          <i class="bi {{ getTemplate(activity.activityType).icon }}"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">{{ activity.activityType }}</h6>
+                          <small class="text-muted">{{ activity.activityTime | date:'shortTime' }}</small>
+                        </div>
+                      </div>
+                      <div class="dropdown" *ngIf="canEdit()">
+                        <button class="btn btn-sm btn-outline-light" data-bs-toggle="dropdown">
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="javascript:void(0);" (click)="editActivity(activity)"><i class="bi bi-pencil me-2"></i>Edit</a></li>
+                          <li><a class="dropdown-item text-danger" href="javascript:void(0);" (click)="deleteActivity(activity.id!)"><i class="bi bi-trash me-2"></i>Delete</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div *ngIf="!selectedChildId && activity.child" class="mb-2">
+                      <small class="text-muted">Child: {{ activity.child.firstName }} {{ activity.child.lastName }}</small>
+                    </div>
+                    
+                    <div *ngIf="activity.duration" class="mb-1">
+                      <small><i class="bi bi-clock me-1"></i>{{ activity.duration }} minutes</small>
+                    </div>
+                    
+                    <div *ngIf="activity.foodItem" class="mb-1">
+                      <small><i class="bi bi-egg-fried me-1"></i>{{ activity.foodItem }}</small>
+                    </div>
+                    
+                    <div *ngIf="activity.mood" class="mb-1">
+                      <small><i class="bi bi-emoji-smile me-1"></i>{{ activity.mood }}</small>
+                    </div>
+                    
+                    <div *ngIf="activity.notes" class="mt-2">
+                      <small class="text-muted">{{ activity.notes }}</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid View -->
+  <div *ngIf="!loading && viewMode === 'grid' && activities.length > 0">
+    <div class="card card-dashbord-all">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-grid me-2"></i>All Activities</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div *ngFor="let activity of activities" class="col-xl-3 col-md-4 col-sm-6 mb-3">
+            <div class="card h-100 border activity-grid-item">
+              <div class="card-body text-center">
+                <div class="activity-icon-large mb-3" [class]="activity.activityType.toLowerCase()">
+                  <i class="bi {{ getTemplate(activity.activityType).icon }}"></i>
+                </div>
+                <h6 class="mb-1">{{ activity.activityType }}</h6>
+                <small class="text-muted d-block mb-2">{{ activity.activityTime | date:'shortTime' }}</small>
+                
+                <div *ngIf="!selectedChildId && activity.child" class="mb-2">
+                  <small class="badge bg-light text-dark">{{ activity.child.firstName }}</small>
+                </div>
+                
+                <div class="d-flex justify-content-center gap-1" *ngIf="canEdit()">
+                  <button class="btn btn-sm btn-outline-primary" (click)="editActivity(activity)">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" (click)="deleteActivity(activity.id!)">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!loading && activities.length === 0" class="text-center py-5">
+    <div class="card card-dashbord-all">
+      <div class="card-body py-5">
+        <i class="bi bi-clipboard-data icon-4x text-muted mb-3 opacity-25"></i>
+        <h5 class="text-muted">No activities recorded for {{ selectedDate | date:'mediumDate' }}</h5>
+        <p class="text-muted">Start tracking daily activities</p>
+        <button *ngIf="canEdit()" class="btn btn-primary" (click)="showBulkAdd = true">
+          <i class="bi bi-plus-circle me-2"></i>Add First Activity
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity Modal -->
+  <div class="modal" [class.show]="showBulkAdd" [style.display]="showBulkAdd ? 'block' : 'none'" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="bi bi-plus-circle me-2"></i>
+            Add Daily Activity
+          </h5>
+          <button type="button" class="btn-close" (click)="showBulkAdd = false"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Activity Templates -->
+          <div class="mb-4">
+            <label class="form-label fw-bold">Select Activity Type</label>
+            <div class="row g-2">
+              <div *ngFor="let template of activityTemplates" class="col-md-3 col-sm-4 col-6">
+                <div class="activity-template-card" 
+                     [class.selected]="newActivity.activityType === template.type"
+                     (click)="selectTemplate(template)">
+                  <div class="template-icon" [class]="template.type.toLowerCase()">
+                    <i class="bi {{template.icon}}"></i>
+                  </div>
+                  <span class="template-label">{{ template.label }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity Form -->
+          <div *ngIf="newActivity.activityType">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Time</label>
+                <input type="datetime-local" class="form-control" [(ngModel)]="newActivity.activityTime">
+              </div>
+              <div class="col-md-6" *ngIf="getTemplate(newActivity.activityType).defaultDuration">
+                <label class="form-label">Duration (minutes)</label>
+                <input type="number" class="form-control" [(ngModel)]="newActivity.duration" placeholder="30">
+              </div>
+            </div>
+
+            <div class="row g-3 mt-2" *ngIf="getTemplate(newActivity.activityType).requiresFood">
+              <div class="col-12">
+                <label class="form-label">Food/Drink</label>
+                <input type="text" class="form-control" [(ngModel)]="newActivity.foodItem" 
+                       placeholder="e.g., Apple slices, Milk">
+              </div>
+            </div>
+
+            <div class="row g-3 mt-2">
+              <div class="col-12">
+                <label class="form-label">Mood</label>
+                <div class="mood-buttons">
+                  <button *ngFor="let mood of moods" 
+                          type="button"
+                          class="btn btn-outline-secondary btn-sm me-2 mb-2" 
+                          [class.active]="newActivity.mood === mood"
+                          (click)="newActivity.mood = mood">
+                    {{ mood }}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-3 mt-2">
+              <div class="col-12">
+                <label class="form-label">Notes</label>
+                <textarea class="form-control" rows="3" [(ngModel)]="newActivity.notes" 
+                          placeholder="Additional notes..."></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="showBulkAdd = false">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="saveActivity()" [disabled]="!newActivity.activityType">
+            <i class="bi bi-check-circle me-2"></i>Save Activity
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade" [class.show]="showBulkAdd" *ngIf="showBulkAdd"></div>
+</div>  

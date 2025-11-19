@@ -1,0 +1,105 @@
+<div class="container mt-4">
+  <app-title-page 
+    title="Event Participants" 
+    [subtitle]="event ? event.name : 'Manage event participants'"
+    icon="bi bi-people"
+    [breadcrumbs]="breadcrumbs"
+    [actions]="titleActions">
+  </app-title-page>
+
+  <!-- Add Participant Form -->
+  <div class="card card-general add-participant mb-4" *ngIf="canAddParticipants()">
+    <div class="card-header" *ngIf="event">
+      <h6>Add Participant</h6><div class="h4">{{ participants.length }}/{{ event.capacity }}</div>
+    </div>
+    <div class="card-body">
+      <div class="row align-items-end">
+        <div class="col-md-8">
+          <label class="form-label">Select Child</label>
+          <select class="form-select" [(ngModel)]="selectedChildId">
+            <option value="0">Choose a child...</option>
+            <option *ngFor="let child of availableChildren" [value]="child.id">
+              {{ child.firstName }} {{ child.lastName }}
+              <span *ngIf="child.parent"> - {{ child.parent.firstName }} {{ child.parent.lastName }}</span>
+            </option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-primary btn-add-global" (click)="addParticipant()" 
+                  [disabled]="!selectedChildId || saving">
+            <span *ngIf="saving" class="spinner-border spinner-border-sm me-2"></span>
+            {{ saving ? 'Adding...' : 'Add Participant' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Participants List -->
+  <div class="card card-general add-participant">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h6>Registered Participants ({{ participants.length }})</h6>
+      <button class="btn btn-secondary btn-cancel-global btn-sm" (click)="goBack()">
+        <i class="bi bi-arrow-left me-1"></i>Back to Events
+      </button>
+    </div>
+    <div class="card-body">
+      <div *ngIf="loading" class="text-center py-4">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div *ngIf="!loading && participants.length === 0" class="text-center py-4 text-muted">
+        No participants registered yet
+      </div>
+
+      <div class="table-responsive" *ngIf="!loading && participants.length > 0">
+        <table class="table table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>Child Name</th>
+              <th>Parent</th>
+              <th>Registered Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let participant of participants">
+              <td>
+                <strong>{{ participant.child?.firstName }} {{ participant.child?.lastName }}</strong>
+              </td>
+              <td>
+                {{ participant.child?.parent?.firstName }} {{ participant.child?.parent?.lastName }}
+              </td>
+              <td>{{ participant.registeredAt | date:'short' }}</td>
+              <td>
+                <span class="badge" [ngClass]="{
+                  'bg-success': participant.status === 'Registered',
+                  'bg-warning': participant.status === 'Pending',
+                  'bg-danger': participant.status === 'Rejected'
+                }">{{ participant.status }}</span>
+              </td>
+              <td>
+                <div class="btn-group" *ngIf="authService.isAdmin() && participant.status === 'Pending'">
+                  <button class="btn btn-sm btn-success" (click)="approveParticipant(participant.id!)">
+                    <i class="bi bi-check"></i> Approve
+                  </button>
+                  <button class="btn btn-sm btn-danger" (click)="rejectParticipant(participant.id!)">
+                    <i class="bi bi-x"></i> Reject
+                  </button>
+                </div>
+                <button *ngIf="canRemoveParticipant(participant)" 
+                        class="btn btn-sm btn-outline-danger" 
+                        (click)="removeParticipant(participant.id!)">
+                  <i class="bi bi-trash"></i> Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

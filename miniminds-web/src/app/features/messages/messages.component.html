@@ -1,0 +1,152 @@
+<div *ngIf="isParent" class="parent-detailchild font-inter">
+  <div class="header-info">
+    <div class="title-icons mb-3" (click)="back()">
+      <div class="page-back">
+        <i class="bi bi-arrow-left"></i>
+      </div>
+      <div class="title-page"></div>
+      <div class="page-setting">
+        <i class="bi bi-gear"></i>
+      </div>
+    </div>
+    <div class="d-flex image-name row_direction">
+      <div class="overflow-hidden">
+        <h5 class="name">Message</h5>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isParent" [class]="isParent ? '' : 'container-fluid mt-4'">
+  <app-title-page [title]="'mailbox'" [breadcrumbs]="[{label: 'Dashboard', url: '/dashboard'}, {label: 'mailbox '}]">
+  </app-title-page>
+
+  <div class="mail-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <button class="compose-btn" (click)="switchView('compose')">
+        <i class="bi bi-pencil-square"></i> Compose
+      </button>
+
+      <div class="nav-item" [class.active]="view === 'inbox'" (click)="switchView('inbox')">
+        <i class="bi bi-inbox"></i> Inbox
+      </div>
+
+      <div class="nav-item" [class.active]="view === 'sent'" (click)="switchView('sent')">
+        <i class="bi bi-send"></i> Sent
+      </div>
+    </div>
+
+    <!-- Main Panel -->
+    <div class="main-panel">
+      <!-- Inbox View -->
+      <div *ngIf="view === 'inbox'" class="mail-list">
+        <div *ngFor="let msg of inbox" class="mail-item" [class.unread]="!msg.isRead" (click)="viewMessage(msg)">
+          <div class="mail-header">
+            <span class="mail-sender">{{msg.senderName}}</span>
+            <span class="mail-date">{{msg.sentAt | date:'short'}}</span>
+          </div>
+          <div class="mail-subject">{{msg.subject}}</div>
+          <div class="mail-preview">{{msg.content}}</div>
+        </div>
+        <div *ngIf="inbox.length === 0" class="empty-state">
+          <i class="bi bi-inbox" style="font-size: 48px;"></i>
+          <p>No messages in inbox</p>
+        </div>
+      </div>
+
+      <!-- Sent View -->
+      <div *ngIf="view === 'sent'" class="mail-list">
+        <div *ngFor="let msg of sent" class="mail-item" (click)="viewMessage(msg)">
+          <div class="mail-header">
+            <span class="mail-sender">To: {{msg.recipientName}}</span>
+            <span class="mail-date">{{msg.sentAt | date:'short'}}</span>
+          </div>
+          <div class="mail-subject">{{msg.subject}}</div>
+          <div class="mail-preview">{{msg.content}}</div>
+        </div>
+        <div *ngIf="sent.length === 0" class="empty-state">
+          <i class="bi bi-send" style="font-size: 48px;"></i>
+          <p>No sent messages</p>
+        </div>
+      </div>
+
+      <!-- Compose View -->
+      <div *ngIf="view === 'compose'" class="compose-form">
+        <h3>New Message</h3>
+
+        <div class="form-group" *ngIf="isAdmin">
+          <label class="form-label">Recipient Type</label>
+          <select [(ngModel)]="composeForm.recipientType" class="form-control">
+            <option value="individual">Individual</option>
+            <option value="all">All Users</option>
+          </select>
+        </div>
+
+        <div class="form-group" *ngIf="composeForm.recipientType === 'individual'">
+          <label class="form-label">To</label>
+          <select [(ngModel)]="composeForm.recipientId" class="form-control" [disabled]="!isAdmin">
+            <option value="">Select recipient...</option>
+            <optgroup label="Parents" *ngIf="isAdmin">
+              <option *ngFor="let p of recipients.parents" [value]="p.id">{{p.name}} ({{p.email}})</option>
+            </optgroup>
+            <optgroup label="Teachers" *ngIf="isAdmin">
+              <option *ngFor="let t of recipients.teachers" [value]="t.id">{{t.name}} ({{t.email}})</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input [(ngModel)]="composeForm.subject" class="form-control" placeholder="Enter subject" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea [(ngModel)]="composeForm.content" class="form-control"
+            placeholder="Type your message..."></textarea>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-primary" (click)="sendMessage()">
+            <i class="bi bi-send"></i> Send
+          </button>
+          <button class="btn btn-secondary" (click)="switchView('inbox')">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <!-- Message View -->
+      <div *ngIf="view === 'view' && selectedMessage" class="message-view">
+        <div class="message-header">
+          <div class="message-subject">{{selectedMessage.subject}}</div>
+          <div class="message-meta">
+            <span><strong>From:</strong> {{selectedMessage.senderName}}</span>
+            <span><strong>To:</strong> {{selectedMessage.recipientName}}</span>
+            <span><strong>Date:</strong> {{selectedMessage.sentAt | date:'medium'}}</span>
+          </div>
+        </div>
+
+        <div class="message-content">{{selectedMessage.content}}</div>
+
+        <div *ngIf="selectedMessage.replies?.length > 0" class="reply-section">
+          <h5>Replies</h5>
+          <div *ngFor="let reply of selectedMessage.replies" class="reply-item">
+            <div class="reply-header">{{reply.senderName}} - {{reply.sentAt | date:'short'}}</div>
+            <div>{{reply.content}}</div>
+          </div>
+        </div>
+
+        <div class="btn-group" style="margin-top: 20px;">
+          <button class="btn btn-primary" (click)="reply()">
+            <i class="bi bi-reply"></i> Reply
+          </button>
+          <button class="btn btn-secondary" (click)="switchView('inbox')">
+            <i class="bi bi-arrow-left"></i> Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+// Brand Colors
+$primary-color: #202c4b;
+$secondary-color: #feccfd;
+$accent-color: #cdeaf0;
+
+.card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(32, 44, 75, 0.1);
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 12px rgba(32, 44, 75, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+// Event Card Styling
+.event-card {
+  .card-img-top {
+    border-radius: 0;
+  }
+}
+
+.event-placeholder {
+  background: linear-gradient(135deg, $primary-color 0%, lighten($primary-color, 10%) 100%);
+}
+
+.event-badge {
+  background-color: $secondary-color !important;
+  color: $primary-color !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+// Event Stats Cards
+.event-stat-card {
+  background-color: rgba(205, 234, 240, 0.3);
+  border: 1px solid rgba(205, 234, 240, 0.5);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(205, 234, 240, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(32, 44, 75, 0.1);
+  }
+}
+
+.stat-icon-wrapper {
+  background-color: rgba(254, 204, 253, 0.3);
+}
+
+.stat-icon {
+  color: $primary-color;
+}
+
+// Participants Card
+
+
+// Event Details Card
+
+
+.detail-icon {
+  color: $primary-color;
+}
+
+.revenue-text {
+  color: $primary-color !important;
+}
+
+// Progress Bar
+.event-progress {
+  border-radius: 10px;
+  background-color: rgba(205, 234, 240, 0.3);
+}
+
+.event-progress-bar {
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: $primary-color !important;
+}
+
+.badge {
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.rounded-circle {
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(32, 44, 75, 0.1);
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .event-stat-card {
+    margin-bottom: 1rem;
+  }
+}
+// Modal Styles
+.modal {
+  display: block !important;
+}
+
+.modal-backdrop {
+  z-index: 1040;
+}
+
+.modal-dialog {
+  z-index: 1050;
+}
+
+.student-item {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(205, 234, 240, 0.1);
+    border-color: rgba(32, 44, 75, 0.2) !important;
+  }
+  
+  &.selected {
+    background-color: rgba(254, 204, 253, 0.2);
+    border-color: #202c4b !important;
+    border-width: 2px;
+  }
+}
+
+.student-list {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #202c4b;
+    border-radius: 3px;
+  }
+}
