@@ -26,6 +26,21 @@ if (!string.IsNullOrEmpty(connectionString))
     Console.WriteLine("Database connection found - enabling services");
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseNpgsql(connectionString));
+    
+    // Auto-migrate database
+    using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+    {
+        try
+        {
+            var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            context.Database.Migrate();
+            Console.WriteLine("Database migrated successfully");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Database migration failed: {ex.Message}");
+        }
+    }
 }
 else
 {
