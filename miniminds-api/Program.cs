@@ -18,7 +18,11 @@ Console.WriteLine($"DefaultConnection: {defaultConn}");
 
 // Use DATABASE_URL directly (GetConnectionString seems to have issues)
 var connectionString = databaseUrl ?? defaultConn;
-Console.WriteLine($"Using connection string: {connectionString?.Substring(0, Math.Min(50, connectionString.Length ?? 0))}...");
+if (!string.IsNullOrEmpty(connectionString))
+{
+    var preview = connectionString.Length > 50 ? connectionString.Substring(0, 50) + "..." : connectionString;
+    Console.WriteLine($"Using connection string: {preview}");
+}
 
 if (!string.IsNullOrEmpty(connectionString))
 {
