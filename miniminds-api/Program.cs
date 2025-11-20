@@ -26,21 +26,6 @@ if (!string.IsNullOrEmpty(connectionString))
     Console.WriteLine("Database connection found - enabling services");
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseNpgsql(connectionString));
-    
-    // Auto-migrate database
-    using (var scope = builder.Services.BuildServiceProvider().CreateScope())
-    {
-        try
-        {
-            var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            context.Database.Migrate();
-            Console.WriteLine("Database migrated successfully");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Database migration failed: {ex.Message}");
-        }
-    }
 }
 else
 {
@@ -141,6 +126,24 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Ensure database is created
+if (!string.IsNullOrEmpty(connectionString))
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        try
+        {
+            var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            context.Database.EnsureCreated();
+            Console.WriteLine("Database tables created successfully");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Database creation failed: {ex.Message}");
+        }
+    }
+}
 
 // Database seeding commented out temporarily
 // _ = Task.Run(async () =>
