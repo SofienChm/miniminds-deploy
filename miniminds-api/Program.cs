@@ -9,9 +9,35 @@ using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// TEMPORARILY DISABLE DATABASE - GET API WORKING FIRST
-Console.WriteLine("Database temporarily disabled - API will work without auth for now");
-string connectionString = null;
+// Add database with proper connection string
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL") ?? 
+                      builder.Configuration["DefaultConnection"] ?? 
+                      builder.Configuration.GetConnectionString("DefaultConnection");
+
+Console.WriteLine($"Connection string found: {!string.IsNullOrEmpty(connectionString)}");
+
+if (!string.IsNullOrEmpty(connectionString))
+{
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseNpgsql(connectionString));
+    
+    builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+    {
+        options.Password.RequireDigit = true;
+        options.Password.RequireLowercase = true;
+        options.Password.RequireUppercase = true;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequiredLength = 6;
+    })
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+    
+    Console.WriteLine("Database and Identity services configured");
+}
+else
+{
+    Console.WriteLine("No database connection - some features will not work");
+}
 
 // Add JWT Authentication (with fallback)
 var jwtKey = builder.Configuration["JWT_SECRET_KEY"] ?? builder.Configuration["Jwt:Key"] ?? "fallback-secret-key-for-development-only";
@@ -93,7 +119,21 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Database creation temporarily disabled
+// Create database tables if connection exists
+if (!string.IsNullOrEmpty(connectionString))
+{
+    try
+    {
+        using var scope = app.Services.CreateScope();
+        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        context.Database.EnsureCreated();
+        Console.WriteLine("Database tables ensured");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Database setup failed: {ex.Message}");
+    }
+}
 
 // Database seeding commented out temporarily
 // _ = Task.Run(async () =>
