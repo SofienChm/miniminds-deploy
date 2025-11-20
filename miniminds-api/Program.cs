@@ -10,16 +10,15 @@ using System.Threading.Tasks;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 var databaseUrl = builder.Configuration["DATABASE_URL"];
 var defaultConn = builder.Configuration["DefaultConnection"];
 
-Console.WriteLine($"ConnectionString from GetConnectionString: {connectionString}");
 Console.WriteLine($"DATABASE_URL: {databaseUrl}");
 Console.WriteLine($"DefaultConnection: {defaultConn}");
 
-// Use any available connection string
-connectionString = connectionString ?? databaseUrl ?? defaultConn;
+// Use DATABASE_URL directly (GetConnectionString seems to have issues)
+var connectionString = databaseUrl ?? defaultConn;
+Console.WriteLine($"Using connection string: {connectionString?.Substring(0, Math.Min(50, connectionString.Length ?? 0))}...");
 
 if (!string.IsNullOrEmpty(connectionString))
 {
