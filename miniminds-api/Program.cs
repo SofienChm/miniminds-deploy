@@ -11,8 +11,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString));
+if (!string.IsNullOrEmpty(connectionString))
+{
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseNpgsql(connectionString));
+}
+else
+{
+    Console.WriteLine("Warning: No database connection string found. Some features may not work.");
+}
 
 // Add Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -26,10 +33,10 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
 
-// Add JWT Authentication
-var jwtKey = builder.Configuration["Jwt:Key"];
-var jwtIssuer = builder.Configuration["Jwt:Issuer"];
-var jwtAudience = builder.Configuration["Jwt:Audience"];
+// Add JWT Authentication (with fallback)
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "fallback-secret-key-for-development-only";
+var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "miniminds-api";
+var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "miniminds-web";
 
 builder.Services.AddAuthentication(options =>
 {
@@ -150,6 +157,10 @@ app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Add health check endpoint
+app.MapGet("/", () => "MiniMinds API is running!");
+app.MapGet("/health", () => "OK");
 
 app.MapControllers();
 app.MapHub<DaycareAPI.Hubs.NotificationHub>("/notificationHub");
