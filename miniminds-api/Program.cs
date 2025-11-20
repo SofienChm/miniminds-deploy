@@ -21,17 +21,20 @@ else
     Console.WriteLine("Warning: No database connection string found. Some features may not work.");
 }
 
-// Add Identity
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+// Add Identity (conditional)
+if (!string.IsNullOrEmpty(connectionString))
 {
-    options.Password.RequireDigit = true;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequiredLength = 6;
-})
-.AddEntityFrameworkStores<ApplicationDbContext>()
-.AddDefaultTokenProviders();
+    builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+    {
+        options.Password.RequireDigit = true;
+        options.Password.RequireLowercase = true;
+        options.Password.RequireUppercase = true;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequiredLength = 6;
+    })
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+}
 
 // Add JWT Authentication (with fallback)
 var jwtKey = builder.Configuration["Jwt:Key"] ?? "fallback-secret-key-for-development-only";
@@ -77,7 +80,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngularApp",
         policy =>
         {
-            policy.SetIsOriginAllowed(origin => true)
+            policy.WithOrigins(
+                      "https://mini-mindss.netlify.app",
+                      "http://localhost:4200",
+                      "https://localhost:4200"
+                  )
                   .AllowAnyHeader()
                   .AllowAnyMethod()
                   .AllowCredentials();
