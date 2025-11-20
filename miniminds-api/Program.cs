@@ -102,39 +102,41 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Seed the database (optional)
-var connectionString2 = builder.Configuration.GetConnectionString("DefaultConnection");
-if (!string.IsNullOrEmpty(connectionString2))
+// Seed the database (optional) - run in background
+_ = Task.Run(async () =>
 {
-    using (var scope = app.Services.CreateScope())
+    var connectionString2 = builder.Configuration.GetConnectionString("DefaultConnection");
+    if (!string.IsNullOrEmpty(connectionString2))
     {
-        var services = scope.ServiceProvider;
-        try
+        using (var scope = app.Services.CreateScope())
         {
-            var context = services.GetRequiredService<ApplicationDbContext>();
-            var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-            var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            var services = scope.ServiceProvider;
+            try
+            {
+                var context = services.GetRequiredService<ApplicationDbContext>();
+                var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+                var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-            // Ensure database is created and apply pending migrations
-            await context.Database.EnsureCreatedAsync();
-            Console.WriteLine("Database connection established.");
+                // Ensure database is created and apply pending migrations
+                await context.Database.EnsureCreatedAsync();
+                Console.WriteLine("Database connection established.");
 
-            // Seed the database with sample data
-            await DatabaseSeeder.SeedAsync(context, userManager, roleManager);
-            Console.WriteLine("Database seeded successfully.");
-        }
-        catch (Exception ex)
-        {
-            var logger = services.GetRequiredService<ILogger<Program>>();
-            logger.LogError(ex, "An error occurred while seeding the database.");
-            Console.WriteLine("Continuing without database seeding...");
+                // Seed the database with sample data
+                await DatabaseSeeder.SeedAsync(context, userManager, roleManager);
+                Console.WriteLine("Database seeded successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Database seeding failed: {ex.Message}");
+                Console.WriteLine("App will continue running without seeded data.");
+            }
         }
     }
-}
-else
-{
-    Console.WriteLine("No database connection string found. Skipping database operations.");
-}
+    else
+    {
+        Console.WriteLine("No database connection string found. Skipping database operations.");
+    }
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
