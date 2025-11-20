@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/miniminds-web"
+  publish = "miniminds-web/dist/miniminds-web"
   command = "npm run build"
 
 [[redirects]]
