@@ -1,6 +1,6 @@
 [build]
   publish = "dist/miniminds-web/browser"
-  command = "npm run build -- --configuration production"
+  command = "npm run build -- --configuration=production"
 
 [[redirects]]
   from = "/*"
