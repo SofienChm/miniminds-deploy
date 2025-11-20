@@ -11,8 +11,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var databaseUrl = builder.Configuration["DATABASE_URL"];
+var defaultConn = builder.Configuration["DefaultConnection"];
+
+Console.WriteLine($"ConnectionString from GetConnectionString: {connectionString}");
+Console.WriteLine($"DATABASE_URL: {databaseUrl}");
+Console.WriteLine($"DefaultConnection: {defaultConn}");
+
+// Use any available connection string
+connectionString = connectionString ?? databaseUrl ?? defaultConn;
+
 if (!string.IsNullOrEmpty(connectionString))
 {
+    Console.WriteLine("Database connection found - enabling services");
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseNpgsql(connectionString));
 }
