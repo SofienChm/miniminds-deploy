@@ -18,12 +18,13 @@ This is the deployment version of MiniMinds app configured for:
    - `STRIPE_PUBLISHABLE_KEY=your-stripe-publishable`
    - `STRIPE_WEBHOOK_SECRET=your-stripe-webhook`
 
-### Frontend (Vercel)
-1. Go to vercel.com
-2. New Project → Import this repo
-3. Root Directory: `miniminds-web`
-4. Framework: Angular
-5. Update `environment.prod.ts` with your Render API URL
+### Frontend (Netlify)
+1. Go to netlify.com
+2. New site from Git → Connect this repo
+3. Base directory: `miniminds-web`
+4. Build command: `npm run build`
+5. Publish directory: `dist/miniminds-web`
+6. Update `environment.prod.ts` with your Render API URL
 
 ## Project Structure
 ```
