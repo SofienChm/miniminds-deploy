@@ -168,8 +168,18 @@ app.UseAuthorization();
 // Add health check endpoint
 app.MapGet("/", () => "MiniMinds API is running!");
 app.MapGet("/health", () => "OK");
+app.MapGet("/api/test", () => new { message = "API is working!", timestamp = DateTime.UtcNow });
+app.MapPost("/api/test", () => new { message = "POST request successful!", timestamp = DateTime.UtcNow });
 
-app.MapControllers();
+// Only map controllers if database is available
+if (!string.IsNullOrEmpty(connectionString))
+{
+    app.MapControllers();
+}
+else
+{
+    Console.WriteLine("Controllers disabled - no database connection");
+}
 app.MapHub<DaycareAPI.Hubs.NotificationHub>("/notificationHub");
 
 // Configure URL for Render
