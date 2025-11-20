@@ -37,9 +37,9 @@ if (!string.IsNullOrEmpty(connectionString))
 }
 
 // Add JWT Authentication (with fallback)
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "fallback-secret-key-for-development-only";
-var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "miniminds-api";
-var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "miniminds-web";
+var jwtKey = builder.Configuration["JWT_SECRET_KEY"] ?? builder.Configuration["Jwt:Key"] ?? "fallback-secret-key-for-development-only";
+var jwtIssuer = builder.Configuration["JWT_ISSUER"] ?? builder.Configuration["Jwt:Issuer"] ?? "miniminds-api";
+var jwtAudience = builder.Configuration["JWT_AUDIENCE"] ?? builder.Configuration["Jwt:Audience"] ?? "miniminds-web";
 
 builder.Services.AddAuthentication(options =>
 {
@@ -109,7 +109,7 @@ builder.Services.AddScoped<DaycareAPI.Services.INotificationService, DaycareAPI.
 builder.Services.AddScoped<DaycareAPI.Services.NotificationService>();
 
 // Configure Stripe
-Stripe.StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
+Stripe.StripeConfiguration.ApiKey = builder.Configuration["STRIPE_SECRET_KEY"] ?? builder.Configuration["Stripe:SecretKey"];
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
