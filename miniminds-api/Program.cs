@@ -9,46 +9,9 @@ using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-var databaseUrl = builder.Configuration["DATABASE_URL"];
-var defaultConn = builder.Configuration["DefaultConnection"];
-
-Console.WriteLine($"DATABASE_URL: {databaseUrl}");
-Console.WriteLine($"DefaultConnection: {defaultConn}");
-
-// Use DATABASE_URL directly (GetConnectionString seems to have issues)
-var connectionString = databaseUrl ?? defaultConn;
-if (!string.IsNullOrEmpty(connectionString))
-{
-    var preview = connectionString.Length > 50 ? connectionString.Substring(0, 50) + "..." : connectionString;
-    Console.WriteLine($"Using connection string: {preview}");
-}
-
-if (!string.IsNullOrEmpty(connectionString))
-{
-    Console.WriteLine("Database connection found - enabling services");
-    builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseNpgsql(connectionString));
-}
-else
-{
-    Console.WriteLine("Warning: No database connection string found. Some features may not work.");
-}
-
-// Add Identity (conditional)
-if (!string.IsNullOrEmpty(connectionString))
-{
-    builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-    {
-        options.Password.RequireDigit = true;
-        options.Password.RequireLowercase = true;
-        options.Password.RequireUppercase = true;
-        options.Password.RequireNonAlphanumeric = false;
-        options.Password.RequiredLength = 6;
-    })
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
-}
+// TEMPORARILY DISABLE DATABASE - GET API WORKING FIRST
+Console.WriteLine("Database temporarily disabled - API will work without auth for now");
+string connectionString = null;
 
 // Add JWT Authentication (with fallback)
 var jwtKey = builder.Configuration["JWT_SECRET_KEY"] ?? builder.Configuration["Jwt:Key"] ?? "fallback-secret-key-for-development-only";
@@ -130,23 +93,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Ensure database is created
-if (!string.IsNullOrEmpty(connectionString))
-{
-    using (var scope = app.Services.CreateScope())
-    {
-        try
-        {
-            var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            context.Database.EnsureCreated();
-            Console.WriteLine("Database tables created successfully");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Database creation failed: {ex.Message}");
-        }
-    }
-}
+// Database creation temporarily disabled
 
 // Database seeding commented out temporarily
 // _ = Task.Run(async () =>
@@ -203,15 +150,9 @@ app.MapGet("/health", () => "OK");
 app.MapGet("/api/test", () => new { message = "API is working!", timestamp = DateTime.UtcNow });
 app.MapPost("/api/test", () => new { message = "POST request successful!", timestamp = DateTime.UtcNow });
 
-// Only map controllers if database is available
-if (!string.IsNullOrEmpty(connectionString))
-{
-    app.MapControllers();
-}
-else
-{
-    Console.WriteLine("Controllers disabled - no database connection");
-}
+// Enable all controllers (database temporarily disabled)
+app.MapControllers();
+Console.WriteLine("Controllers enabled - database operations will fail but API structure works");
 app.MapHub<DaycareAPI.Hubs.NotificationHub>("/notificationHub");
 
 // Configure URL for Render
